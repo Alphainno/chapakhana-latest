@@ -148,7 +148,7 @@
                 <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     @foreach ($products as $product)
                         <article
-                            class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                            class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                             data-product-card
                             data-title="{{ strtolower($product['title']) }}"
                             data-category="{{ $product['category'] }}"
@@ -180,6 +180,12 @@
                                         <span class="rounded-full bg-green-50 text-green-700 px-2 py-1">In stock</span>
                                     </div>
                                 </div>
+                                <button onclick="addToCart('{{ $product['title'] }}', {{ $product['price'] }}, event)" class="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"></path>
+                                    </svg>
+                                    Add to Cart
+                                </button>
                             </div>
                         </article>
                     @endforeach

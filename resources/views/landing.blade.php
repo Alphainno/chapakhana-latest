@@ -250,64 +250,64 @@
                         </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/booklets" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=400&fit=crop" alt="Booklets" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Booklets</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/catalogs" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Catalogs</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop" alt="Magazines" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Magazines</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/banners" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1504198458632-1631c46f4506?w=400&h=400&fit=crop" alt="Banners" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Banners</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/stationery" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Stationery" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Stationery</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/banners" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=400&fit=crop" alt="Signage" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Signage</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <button onclick="scrollBestSellers('left')" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
@@ -355,166 +355,203 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
                 <div class="lg:col-span-3">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Signs & Banners</h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Stickers & Labels</h2>
                     <p class="text-base text-gray-700 mb-6 leading-relaxed">
-                        Make your message stand out with custom banners, indoor signs, and storefront displays. Durable, professional, and budget-friendly—perfect for promotions, trade shows, and more.
+                        Enhance your brand visibility with custom stickers and labels. Perfect for product packaging, promotions, and branding. Durable, high-quality materials for indoor and outdoor use.
                     </p>
-                    <a href="#" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300">
+                    <a href="/stickers" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300">
                         Browse All
                     </a>
                 </div>
                 <div class="lg:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <a href="/stickers/die-cut" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-4">
-                            <img src="https://images.unsplash.com/photo-1557425493-6f90ae4659fc?w=400&h=300&fit=crop" alt="Retractable Banner Stands" class="w-full h-full object-contain">
+                            <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=300&fit=crop" alt="Die Cut Stickers" class="w-full h-full object-contain">
                         </div>
                         <div class="p-3 text-center border-t border-gray-100">
-                            <h3 class="text-sm font-semibold text-gray-900">Retractable Banner<br>Stands</h3>
+                            <h3 class="text-sm font-semibold text-gray-900">Die Cut Stickers</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/stickers/vinyl" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-4">
-                            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop" alt="Advertising Flags" class="w-full h-full object-contain">
+                            <img src="https://images.unsplash.com/photo-1599080876691-3e99ed1ab7e6?w=400&h=300&fit=crop" alt="Roll Labels" class="w-full h-full object-contain">
                         </div>
                         <div class="p-3 text-center border-t border-gray-100">
-                            <h3 class="text-sm font-semibold text-gray-900">Advertising Flags</h3>
+                            <h3 class="text-sm font-semibold text-gray-900">Roll Labels</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/stickers/kiss-cut" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-4">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Vinyl Banners" class="w-full h-full object-contain">
+                            <img src="https://images.unsplash.com/photo-1585308317918-d1ab32fe8e90?w=400&h=300&fit=crop" alt="Sheet Labels" class="w-full h-full object-contain">
                         </div>
                         <div class="p-3 text-center border-t border-gray-100">
-                            <h3 class="text-sm font-semibold text-gray-900">Vinyl Banners</h3>
+                            <h3 class="text-sm font-semibold text-gray-900">Sheet Labels</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/stickers/holographic" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-4">
-                            <img src="https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?w=400&h=300&fit=crop" alt="Foam Board Signs" class="w-full h-full object-contain">
+                            <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop" alt="Holographic Stickers" class="w-full h-full object-contain">
                         </div>
                         <div class="p-3 text-center border-t border-gray-100">
-                            <h3 class="text-sm font-semibold text-gray-900">Foam Board Signs</h3>
+                            <h3 class="text-sm font-semibold text-gray-900">Holographic Stickers</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Categories Section -->
+    <!-- Product Categories Section (Individual Items Slider) -->
     <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-                <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=300&fit=crop" alt="Books" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Books</h3>
-                        </div>
-                    </a>
+            <div class="relative">
+                <div class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab scroll-smooth select-none touch-pan-y" id="productItemsContainer">
+                    <!-- Paperback Book -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/books/paperback" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=225&fit=crop" alt="Paperback book" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Paperback book</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Hardback Book -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/books/hardback" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=225&fit=crop" alt="Hardback book" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Hardback book</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Special Finish Hardback -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/books/special-finish-hardback" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=225&fit=crop" alt="Special Finish Hardback" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-blue-600">Special Finish Hardback</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Comics -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/books/comics" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=300&h=225&fit=crop" alt="Comics" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Comics</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Self-published book -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/books/self-published" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=225&fit=crop" alt="Self-published book" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Self-published book</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Business Cards Classic -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/business-cards/classic" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=300&h=225&fit=crop" alt="Classic Business Cards" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Classic Business Cards</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Roll Labels -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/stickers" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1599080876691-3e99ed1ab7e6?w=300&h=225&fit=crop" alt="Roll Labels" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Roll Labels</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Die Cut Stickers -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/stickers" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=300&h=225&fit=crop" alt="Die Cut Stickers" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Die Cut Stickers</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Magazine -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=225&fit=crop" alt="Magazine" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Magazine</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Vinyl Banner -->
+                    <div class="flex-none w-48 sm:w-56 snap-center">
+                        <a href="/banners/vinyl-banners" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                            <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center p-4">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=225&fit=crop" alt="Vinyl Banner" class="w-full h-full object-cover rounded">
+                            </div>
+                            <div class="p-3 text-center bg-white">
+                                <h3 class="text-sm sm:text-base font-semibold text-gray-900">Vinyl Banner</h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="group">
-                    <a href="/catalogs" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=300&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Catalogs</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="group">
-                    <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1586210579191-33b45e38fa8c?w=300&h=300&fit=crop" alt="Magazines" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Magazines</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="group">
-                    <a href="/booklets" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=300&h=300&fit=crop" alt="Booklets" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Booklets</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Manuals" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Manuals</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=300&fit=crop" alt="Zines" class="w-full h-full object-contain">
-                        </div>
-                        <div class="p-4 text-center bg-white">
-                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Zines</h3>
-                        </div>
-                    </a>
-                </div>
+                <button onclick="scrollProductItems('left')" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="scrollProductItems('right')" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Signs & Banners Section (Alternative Layout) -->
-    <section class="py-12 sm:py-16 lg:py-20 bg-gray-100">
+    <!-- Stickers & Labels Section (Individual Layout) -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                <div class="lg:w-80 flex-shrink-0">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Signs & Banners</h2>
-                    <p class="text-base text-gray-700 mb-6 leading-relaxed">
-                        Make your message stand out with custom banners, indoor signs, and storefront displays. Durable, professional, and budget-friendly—perfect for promotions, trade shows, and more.
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                        Stickers & Labels
+                    </h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                        Enhance your brand visibility with custom stickers and labels. Perfect for product packaging, promotions, and branding. Durable, high-quality materials for indoor and outdoor use.
                     </p>
-                    <a href="/banners" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300">
-                        Browse All
+                    <a href="/stickers" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        Discover More
                     </a>
                 </div>
-                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <a href="/banners/roll-up-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1557425493-6f90ae4659fc?w=400&h=300&fit=crop" alt="Retractable Banner Stands" class="w-full h-full object-cover rounded">
-                        </div>
-                        <div class="p-4 text-center">
-                            <h3 class="text-sm sm:text-base font-semibold text-gray-900 leading-tight">Retractable Banner<br>Stands</h3>
-                        </div>
-                    </a>
-                    <a href="/banners/fabric-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop" alt="Advertising Flags" class="w-full h-full object-cover rounded">
-                        </div>
-                        <div class="p-4 text-center">
-                            <h3 class="text-sm sm:text-base font-semibold text-gray-900">Advertising Flags</h3>
-                        </div>
-                    </a>
-                    <a href="/banners/vinyl-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Vinyl Banners" class="w-full h-full object-cover rounded">
-                        </div>
-                        <div class="p-4 text-center">
-                            <h3 class="text-sm sm:text-base font-semibold text-gray-900">Vinyl Banners</h3>
-                        </div>
-                    </a>
-                    <a href="/banners/mesh-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
-                            <img src="https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?w=400&h=300&fit=crop" alt="Foam Board Signs" class="w-full h-full object-cover rounded">
-                        </div>
-                        <div class="p-4 text-center">
-                            <h3 class="text-sm sm:text-base font-semibold text-gray-900">Foam Board Signs</h3>
-                        </div>
-                    </a>
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=800&h=500&fit=crop" alt="Stickers & Labels" class="w-full h-auto rounded-lg shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-lg -z-10 hidden sm:block"></div>
+                        <div class="absolute -top-4 -left-4 w-32 h-32 bg-purple-500 rounded-lg -z-10 hidden sm:block"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -526,7 +563,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">Explore our Display Signs</h2>
             <div class="relative">
                 <div class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4" id="displaySignsContainer">
-                    <div class="flex-none w-64 sm:w-72 snap-center">
+                    <a href="/banners" class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="aspect-square bg-gray-50 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1557425493-6f90ae4659fc?w=400&h=400&fit=crop" alt="Step & Repeat Banners" class="w-full h-full object-contain">
@@ -535,8 +572,8 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Step & Repeat Banners</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
+                    </a>
+                    <a href="/banners" class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="aspect-square bg-gray-50 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?w=400&h=400&fit=crop" alt="Pop-up Displays" class="w-full h-full object-contain">
@@ -545,8 +582,8 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Pop-up Displays</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
+                    </a>
+                    <a href="/banners" class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="aspect-square bg-gray-50 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=400&fit=crop" alt="Retractable Banners" class="w-full h-full object-contain">
@@ -555,8 +592,8 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Retractable Banners</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
+                    </a>
+                    <a href="/banners" class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="aspect-square bg-gray-50 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Feather Flags" class="w-full h-full object-contain">
@@ -565,8 +602,8 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Feather Flags</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
+                    </a>
+                    <a href="/banners" class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="aspect-square bg-gray-50 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?w=400&h=400&fit=crop" alt="Tension Fabric Banners" class="w-full h-full object-contain">
@@ -575,7 +612,7 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Tension Fabric Banners</h3>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <button onclick="scrollDisplaySigns('left')" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -611,7 +648,7 @@
                 </h2>
                 <div class="space-y-4">
                     <p class="text-base text-gray-700 leading-relaxed">
-                        Pixartprinting offers a wide range of <a href="#" class="text-blue-600 hover:underline font-medium">book and magazine printing</a> options, perfect for both personal projects and professional needs. Whether you're looking to print a <a href="#" class="text-blue-600 hover:underline font-medium">catalog</a>, <a href="#" class="text-blue-600 hover:underline font-medium">booklet</a>, or a full-length <a href="#" class="text-blue-600 hover:underline font-medium">magazine</a>, we provide the highest quality <strong>printing services</strong>. We specialize in <a href="#" class="text-blue-600 hover:underline font-medium">saddle stitch</a> and <a href="#" class="text-blue-600 hover:underline font-medium">perfect binding</a> to create professional-looking, durable publications that will stand the test of time.
+                        Pixartprinting offers a wide range of <a href="/books" class="text-blue-600 hover:underline font-medium">book and magazine printing</a> options, perfect for both personal projects and professional needs. Whether you're looking to print a <a href="/catalogs" class="text-blue-600 hover:underline font-medium">catalog</a>, <a href="/booklets" class="text-blue-600 hover:underline font-medium">booklet</a>, or a full-length <a href="/magazines" class="text-blue-600 hover:underline font-medium">magazine</a>, we provide the highest quality <strong>printing services</strong>. We specialize in <a href="/books" class="text-blue-600 hover:underline font-medium">saddle stitch</a> and <a href="/books" class="text-blue-600 hover:underline font-medium">perfect binding</a> to create professional-looking, durable publications that will stand the test of time.
                     </p>
                     <p class="text-base text-gray-700 leading-relaxed">
                         Our <strong>online printing services for books and magazines</strong> are designed to be easy and efficient. With our custom printing services, you can upload your files, choose the perfect paper, and select your binding options—all from the comfort of your home or office. Whether you need a small run or large-scale printing, Pixartprinting delivers fast turnaround times without compromising on quality.
@@ -624,10 +661,10 @@
                 </h2>
                 <div class="space-y-4">
                     <p class="text-base text-gray-700 leading-relaxed">
-                        Enhance your brand visibility with our <a href="#" class="text-blue-600 hover:underline font-medium">custom sticker</a> and <a href="#" class="text-blue-600 hover:underline font-medium">label printing services</a>. Pixartprinting offers a variety of sticker and label types that are perfect for product packaging, marketing campaigns, and promotional materials. Our <strong>custom stickers</strong> are made from durable materials, ensuring long-lasting quality for both indoor and outdoor use.
+                        Enhance your brand visibility with our <a href="/stickers" class="text-blue-600 hover:underline font-medium">custom sticker</a> and <a href="/stickers" class="text-blue-600 hover:underline font-medium">label printing services</a>. Pixartprinting offers a variety of sticker and label types that are perfect for product packaging, marketing campaigns, and promotional materials. Our <strong>custom stickers</strong> are made from durable materials, ensuring long-lasting quality for both indoor and outdoor use.
                     </p>
                     <p class="text-base text-gray-700 leading-relaxed">
-                        Whether you need custom stickers for a product launch or <a href="#" class="text-blue-600 hover:underline font-medium">roll labels</a> for your packaging, we offer fully <strong>personalized printing services</strong> to help you stand out. Choose from different shapes, sizes, and finishes to create the perfect stickers or labels for your business needs.
+                        Whether you need custom stickers for a product launch or <a href="/stickers" class="text-blue-600 hover:underline font-medium">roll labels</a> for your packaging, we offer fully <strong>personalized printing services</strong> to help you stand out. Choose from different shapes, sizes, and finishes to create the perfect stickers or labels for your business needs.
                     </p>
                 </div>
             </div>
@@ -686,6 +723,16 @@
     function scrollDisplaySigns(direction) {
         const container = document.getElementById('displaySignsContainer');
         const scrollAmount = 300;
+        if (direction === 'left') {
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+
+    function scrollProductItems(direction) {
+        const container = document.getElementById('productItemsContainer');
+        const scrollAmount = 240;
         if (direction === 'left') {
             container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         } else {
