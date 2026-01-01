@@ -1,6 +1,6 @@
 <header class="bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="/" class="text-2xl font-bold text-red-600">
@@ -9,7 +9,7 @@
             </div>
 
             <!-- Search Bar -->
-            <div class="hidden md:flex flex-1 max-w-md mx-8">
+            <div class="hidden md:flex flex-1 max-w-3xl mx-4 lg:mx-6">
                 <div class="relative w-full">
                     <input
                         type="text"
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Right Side Menu -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 sm:gap-5">
                 <a href="tel:(844)938-6754" class="hidden lg:flex items-center gap-2 text-gray-700 hover:text-gray-900">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -71,15 +71,19 @@
     <!-- Main Navigation -->
     <nav class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-nowrap items-center gap-3 sm:gap-4 md:gap-5 justify-start whitespace-nowrap overflow-x-auto py-2">
-                <a href="/" class="text-blue-600 font-semibold text-xs sm:text-sm hover:text-blue-700">ALL PRODUCTS</a>
-                <a href="/book-configure" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Magazines, Books & Catalogs</a>
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-5 justify-start whitespace-nowrap h-12">
+                <a href="/" class="text-blue-600 font-semibold text-xs sm:text-sm hover:text-blue-700">Home</a>
+                <a href="/shop" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Shop</a>
                 <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Marketing Materials</a>
                 <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Business Cards</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Invitations & Stationery</a>
                 <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Stickers & Labels</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Signs & Banners</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Brochures & Flyers</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Banners & Signs</a>
                 <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Promotional Items</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Postcards</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Invitations</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Stationery</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm">Posters</a>
             </div>
         </div>
     </nav>

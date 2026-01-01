@@ -81,22 +81,22 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 @php
                     $books = [
-                        ['title' => 'Paperback book', 'img' => 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=300&fit=crop'],
-                        ['title' => 'Hardback book', 'img' => 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=300&fit=crop'],
-                        ['title' => 'Special Finish Hardback', 'img' => 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=300&h=300&fit=crop'],
-                        ['title' => 'Comics', 'img' => 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=300&h=300&fit=crop'],
-                        ['title' => 'Self-published book', 'img' => 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=300&fit=crop'],
-                        ['title' => 'Recipe book', 'img' => 'https://images.unsplash.com/photo-1592430599438-26d6e9a5b975?w=300&h=300&fit=crop'],
-                        ['title' => 'Cookery Book', 'img' => 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=300&h=300&fit=crop'],
-                        ['title' => 'Pocket-sized book', 'img' => 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=300&fit=crop'],
-                        ['title' => 'Lookbook', 'img' => 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=300&h=300&fit=crop'],
-                        ['title' => 'Manga', 'img' => 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=300&h=300&fit=crop'],
+                        ['title' => 'Paperback book', 'url' => '/books/paperback', 'img' => 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=300&fit=crop'],
+                        ['title' => 'Hardback book', 'url' => '/books/hardback', 'img' => 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=300&fit=crop'],
+                        ['title' => 'Special Finish Hardback', 'url' => '/books/special-finish-hardback', 'img' => 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=300&h=300&fit=crop'],
+                        ['title' => 'Comics', 'url' => '/books/comics', 'img' => 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=300&h=300&fit=crop'],
+                        ['title' => 'Self-published book', 'url' => '/books/self-published', 'img' => 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=300&fit=crop'],
+                        ['title' => 'Recipe book', 'url' => '/books/recipe-book', 'img' => 'https://images.unsplash.com/photo-1592430599438-26d6e9a5b975?w=300&h=300&fit=crop'],
+                        ['title' => 'Cookery Book', 'url' => '/books/cookery-book', 'img' => 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=300&h=300&fit=crop'],
+                        ['title' => 'Pocket-sized book', 'url' => '/books/pocket-sized', 'img' => 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=300&fit=crop'],
+                        ['title' => 'Lookbook', 'url' => '/books/lookbook', 'img' => 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=300&h=300&fit=crop'],
+                        ['title' => 'Manga', 'url' => '/books/manga', 'img' => 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=300&h=300&fit=crop'],
 
                     ];
                 @endphp
 
                 @foreach($books as $book)
-                    <a href="#" class="group flex flex-col items-center text-center">
+                    <a href="{{ $book['url'] }}" class="group flex flex-col items-center text-center">
                         <div class="w-full aspect-square bg-gray-50 mb-3 overflow-hidden rounded-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100">
                             <img src="{{ $book['img'] }}" alt="{{ $book['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>

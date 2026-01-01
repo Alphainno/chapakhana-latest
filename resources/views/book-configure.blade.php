@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Configure Your Book | Chapakhana')
+@section('title', ($productTitle ?? 'Book') . ' | Chapakhana')
 
 @section('header')
     @include('partials.header')
@@ -17,7 +17,7 @@
                 <span>/</span>
                 <a href="#" class="hover:text-gray-900">Books</a>
                 <span>/</span>
-                <span class="text-gray-900">Edged CMYK book</span>
+                <span class="text-gray-900">{{ $productTitle ?? 'Book' }}</span>
             </nav>
         </div>
     </section>
@@ -28,13 +28,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Left: Product Info -->
                 <div>
-                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Edged CMYK book</h1>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{{ $productTitle ?? 'Book' }}</h1>
                     <p class="text-gray-700 mb-6">
-                        Give your project a unique look by adding this 4-page edged color printing. This premium effect can be used on both covers, which are perfect for cookbooks, photo albums and photo books, and much more.
+                        Give your project a unique look with our premium {{ strtolower($productTitle ?? 'book') }} printing. Perfect for showcasing your content with professional quality and durability.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-700 mb-6">
-                        <li>• 4-COLOR EDGE PRINTING</li>
-                        <li>• CMYK printing on all 4 edges</li>
+                        <li>• Premium quality printing</li>
+                        <li>• Multiple binding options</li>
                         <li>• Available from 40 pages</li>
                     </ul>
 
@@ -75,7 +75,7 @@
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Binding</label>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                                <button class="border-2 border-blue-600 rounded-lg p-4 hover:bg-blue-50 transition">
+                                <button type="button" data-option="binding" data-value="perfect" data-price="0" class="option-btn border-2 border-blue-600 rounded-lg p-4 hover:bg-blue-50 transition">
                                     <div class="aspect-square mb-2 flex items-center justify-center">
                                         <svg class="w-16 h-16 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <rect x="4" y="4" width="16" height="16" stroke-width="1.5"/>
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="text-xs font-medium text-center">Perfect bound</div>
                                 </button>
-                                <button class="border-2 border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition">
+                                <button type="button" data-option="binding" data-value="saddle" data-price="5" class="option-btn border-2 border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition">
                                     <div class="aspect-square mb-2 flex items-center justify-center">
                                         <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <rect x="4" y="4" width="16" height="16" stroke-width="1.5"/>
@@ -99,23 +99,23 @@
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Format <span class="text-blue-600">More ℹ</span></label>
                             <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="format" data-value="square" data-price="3" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">Square format</div>
                                     <div class="text-xs text-gray-600">210 x 210 mm</div>
                                 </button>
-                                <button class="border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
+                                <button type="button" data-option="format" data-value="a5" data-price="0" class="option-btn border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
                                     <div class="text-sm font-medium">Small A5</div>
                                     <div class="text-xs text-gray-600">148 x 210 mm</div>
                                 </button>
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="format" data-value="a4" data-price="8" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">Large A4</div>
                                     <div class="text-xs text-gray-600">210 x 297 mm</div>
                                 </button>
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="format" data-value="letter" data-price="7" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">US Letter</div>
                                     <div class="text-xs text-gray-600">216 x 279 mm</div>
                                 </button>
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="format" data-value="custom" data-price="12" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">Custom</div>
                                 </button>
                             </div>
@@ -149,7 +149,7 @@
                         <!-- Number of pages -->
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-2">Number of pages (cover included) <span class="text-blue-600">ℹ</span></label>
-                            <input type="number" value="40" min="40" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="number" id="numPages" value="40" min="40" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
 
                         <!-- Black and white printing -->
@@ -171,7 +171,7 @@
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Cover type</label>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                <button class="border-2 border-blue-600 rounded-lg p-4 hover:bg-blue-50 transition">
+                                <button type="button" data-option="cover" data-value="soft" data-price="0" class="option-btn border-2 border-blue-600 rounded-lg p-4 hover:bg-blue-50 transition">
                                     <div class="aspect-square mb-2 bg-gray-100 rounded flex items-center justify-center">
                                         <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M4 4h16v16H4z"/>
@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="text-xs font-medium text-center">Soft cover</div>
                                 </button>
-                                <button class="border-2 border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition">
+                                <button type="button" data-option="cover" data-value="hard" data-price="15" class="option-btn border-2 border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition">
                                     <div class="aspect-square mb-2 bg-gray-100 rounded flex items-center justify-center">
                                         <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M4 4h16v16H4z"/>
@@ -195,21 +195,21 @@
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Paper (inside pages)</label>
                             <div class="space-y-3">
                                 <label class="flex items-start gap-3 p-3 border-2 border-blue-600 rounded-lg bg-blue-50 cursor-pointer">
-                                    <input type="radio" name="paper_inside" value="satin" checked class="mt-1">
+                                    <input type="radio" name="paper_inside" value="satin" data-price="0" checked class="mt-1 paper-option">
                                     <div class="flex-1">
                                         <div class="font-medium text-sm">Satin coated, White (90 / 115 gsm)</div>
                                         <div class="text-xs text-gray-600">Semi-glossy finish with a velvety feel. Ideal for high-quality images and text.</div>
                                     </div>
                                 </label>
                                 <label class="flex items-start gap-3 p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-600">
-                                    <input type="radio" name="paper_inside" value="uncoated">
+                                    <input type="radio" name="paper_inside" value="uncoated" data-price="2" class="mt-1 paper-option">
                                     <div class="flex-1">
                                         <div class="font-medium text-sm">Offset uncoated, White (80 gsm)</div>
                                         <div class="text-xs text-gray-600">Natural paper surface, perfect for writing notes.</div>
                                     </div>
                                 </label>
                                 <label class="flex items-start gap-3 p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-600">
-                                    <input type="radio" name="paper_inside" value="recycled">
+                                    <input type="radio" name="paper_inside" value="recycled" data-price="4" class="mt-1 paper-option">
                                     <div class="flex-1">
                                         <div class="font-medium text-sm">Recycled, White (80 gsm)</div>
                                         <div class="text-xs text-gray-600">Eco-friendly recycled paper with natural texture.</div>
@@ -243,10 +243,10 @@
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Weight <span class="text-blue-600">ℹ</span></label>
                             <div class="grid grid-cols-2 gap-4">
-                                <button class="border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
+                                <button type="button" data-option="weight" data-value="115" data-price="0" class="option-btn border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
                                     <div class="text-sm font-medium">115 gsm</div>
                                 </button>
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="weight" data-value="135" data-price="6" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">135 gsm</div>
                                 </button>
                             </div>
@@ -256,10 +256,10 @@
                         <div class="mb-8">
                             <label class="block text-sm font-semibold text-gray-900 mb-3">Lamination</label>
                             <div class="grid grid-cols-2 gap-4">
-                                <button class="border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
+                                <button type="button" data-option="lamination" data-value="matt" data-price="5" class="option-btn border-2 border-blue-600 rounded-lg p-3 text-center bg-blue-50">
                                     <div class="text-sm font-medium">Matt</div>
                                 </button>
-                                <button class="border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
+                                <button type="button" data-option="lamination" data-value="none" data-price="0" class="option-btn border border-gray-300 rounded-lg p-3 text-center hover:border-blue-600 transition">
                                     <div class="text-sm font-medium">None</div>
                                 </button>
                             </div>
@@ -440,23 +440,27 @@
                         <div class="space-y-3 mb-6 text-sm">
                             <div class="flex justify-between">
                                 <span>Quantity</span>
-                                <span>5</span>
+                                <span id="summaryQuantity">5</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Production and materials</span>
-                                <span>£37.54</span>
+                                <span>Base price</span>
+                                <span id="basePrice">£25.00</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>VAT</span>
-                                <span>£7.51</span>
+                                <span>Options total</span>
+                                <span id="optionsPrice">£12.54</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>VAT (20%)</span>
+                                <span id="vatAmount">£7.51</span>
                             </div>
                             <div class="flex justify-between">
                                 <span>Shipping</span>
-                                <span>£0.00</span>
+                                <span id="shippingCost">£0.00</span>
                             </div>
                             <div class="border-t border-gray-600 pt-3 flex justify-between text-lg font-bold">
                                 <span>Total</span>
-                                <span>£44.16</span>
+                                <span id="totalPrice">£44.16</span>
                             </div>
                         </div>
 
@@ -477,6 +481,101 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Price calculation system
+        const pricing = {
+            basePrice: 25.00,
+            selectedOptions: {
+                binding: { value: 'perfect', price: 0 },
+                format: { value: 'a5', price: 0 },
+                cover: { value: 'soft', price: 0 },
+                paperInside: { value: 'satin', price: 0 },
+                weight: { value: '115', price: 0 },
+                lamination: { value: 'matt', price: 5 }
+            },
+            quantity: 5,
+            vatRate: 0.20,
+            freeShippingThreshold: 50
+        };
+
+        function calculatePrice() {
+            // Get number of pages
+            const numPages = parseInt(document.getElementById('numPages')?.value || 40);
+            const pageMultiplier = numPages / 40; // Base is 40 pages
+            
+            // Calculate base with pages
+            let base = pricing.basePrice * pageMultiplier;
+            
+            // Add options
+            let optionsTotal = 0;
+            for (let key in pricing.selectedOptions) {
+                optionsTotal += pricing.selectedOptions[key].price;
+            }
+            
+            // Calculate subtotal
+            const subtotal = (base + optionsTotal) * pricing.quantity;
+            
+            // Calculate VAT
+            const vat = subtotal * pricing.vatRate;
+            
+            // Calculate shipping
+            const shipping = subtotal >= pricing.freeShippingThreshold ? 0 : 5.00;
+            
+            // Calculate total
+            const total = subtotal + vat + shipping;
+            
+            // Update UI
+            document.getElementById('basePrice').textContent = `£${base.toFixed(2)}`;
+            document.getElementById('optionsPrice').textContent = `£${optionsTotal.toFixed(2)}`;
+            document.getElementById('summaryQuantity').textContent = pricing.quantity;
+            document.getElementById('vatAmount').textContent = `£${vat.toFixed(2)}`;
+            document.getElementById('shippingCost').textContent = `£${shipping.toFixed(2)}`;
+            document.getElementById('totalPrice').textContent = `£${total.toFixed(2)}`;
+        }
+
+        // Handle option button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Option buttons
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const option = this.dataset.option;
+                    const value = this.dataset.value;
+                    const price = parseFloat(this.dataset.price);
+                    
+                    // Update selected state
+                    document.querySelectorAll(`[data-option="${option}"]`).forEach(b => {
+                        b.classList.remove('border-blue-600', 'bg-blue-50');
+                        b.classList.add('border-gray-200');
+                    });
+                    this.classList.remove('border-gray-200');
+                    this.classList.add('border-blue-600', 'bg-blue-50');
+                    
+                    // Update pricing
+                    pricing.selectedOptions[option] = { value, price };
+                    calculatePrice();
+                });
+            });
+
+            // Paper options (radio buttons)
+            document.querySelectorAll('.paper-option').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const price = parseFloat(this.dataset.price);
+                    pricing.selectedOptions.paperInside = { value: this.value, price };
+                    calculatePrice();
+                });
+            });
+
+            // Number of pages
+            const numPagesInput = document.getElementById('numPages');
+            if (numPagesInput) {
+                numPagesInput.addEventListener('input', calculatePrice);
+            }
+
+            // Initial calculation
+            calculatePrice();
+        });
+    </script>
 
     <!-- PRO File Check Section -->
     <section class="bg-blue-50 py-12">

@@ -1,0 +1,308 @@
+@extends('layouts.app')
+
+@section('title', 'Shop | Chapakhana')
+
+@section('header')
+    @include('partials.header')
+@endsection
+
+@php
+    $products = [
+        ['title' => 'Paperback Book Bundle', 'category' => 'books', 'format' => 'paperback', 'price' => 8.50, 'rating' => 4.6, 'popularity' => 95, 'stock' => true, 'badge' => 'New', 'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=420&fit=crop', 'desc' => 'Lightweight novel-ready sets with recycled interiors.'],
+        ['title' => 'Hardback Photo Book', 'category' => 'books', 'format' => 'hardback', 'price' => 24.00, 'rating' => 4.8, 'popularity' => 91, 'stock' => true, 'badge' => 'Bestseller', 'image' => 'https://images.unsplash.com/photo-1457694587812-e8bf29a43845?w=500&h=420&fit=crop', 'desc' => 'Gallery-grade binding with matte cover options.'],
+        ['title' => 'Square Lookbook', 'category' => 'marketing', 'format' => 'square', 'price' => 16.75, 'rating' => 4.4, 'popularity' => 82, 'stock' => true, 'badge' => 'Limited', 'image' => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=420&fit=crop', 'desc' => 'Brand-forward square books for campaigns.'],
+        ['title' => 'Layflat Portfolio', 'category' => 'books', 'format' => 'layflat', 'price' => 38.00, 'rating' => 4.9, 'popularity' => 77, 'stock' => true, 'badge' => 'Premium', 'image' => 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=500&h=420&fit=crop', 'desc' => 'Seamless spreads ideal for photography and art.'],
+        ['title' => 'Magazine Run', 'category' => 'marketing', 'format' => 'magazine', 'price' => 4.20, 'rating' => 4.2, 'popularity' => 88, 'stock' => true, 'badge' => 'Bulk', 'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=420&fit=crop', 'desc' => 'Quick-turn glossy mags for launches.'],
+        ['title' => 'Notebook Stack', 'category' => 'stationery', 'format' => 'notebook', 'price' => 6.40, 'rating' => 4.1, 'popularity' => 73, 'stock' => true, 'badge' => 'Eco', 'image' => 'https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=500&h=420&fit=crop', 'desc' => 'Wire-bound notes with soy inks.'],
+        ['title' => 'Pocket Zine', 'category' => 'books', 'format' => 'pocket', 'price' => 3.80, 'rating' => 4.0, 'popularity' => 69, 'stock' => true, 'badge' => 'Indie', 'image' => 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=500&h=420&fit=crop', 'desc' => 'Short-run zines with uncoated feel.'],
+        ['title' => 'Cookbook Kit', 'category' => 'books', 'format' => 'cookbook', 'price' => 19.50, 'rating' => 4.5, 'popularity' => 83, 'stock' => true, 'badge' => 'Bundle', 'image' => 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&h=420&fit=crop', 'desc' => 'Oil-resistant papers with foil accents.'],
+        ['title' => 'Catalog Set', 'category' => 'marketing', 'format' => 'catalog', 'price' => 7.10, 'rating' => 4.3, 'popularity' => 79, 'stock' => true, 'badge' => 'Ready', 'image' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=420&fit=crop', 'desc' => 'Multi-variant catalogs with spot UV.'],
+        ['title' => 'Presentation Folder', 'category' => 'stationery', 'format' => 'folder', 'price' => 2.90, 'rating' => 3.9, 'popularity' => 60, 'stock' => true, 'badge' => 'Saver', 'image' => 'https://images.unsplash.com/photo-1509099836639-18ba02e2e1ba?w=500&h=420&fit=crop', 'desc' => 'Die-cut folders with custom pockets.'],
+        ['title' => 'Large Format Poster', 'category' => 'signage', 'format' => 'poster', 'price' => 12.00, 'rating' => 4.7, 'popularity' => 86, 'stock' => true, 'badge' => 'UV Safe', 'image' => 'https://images.unsplash.com/photo-1522199710521-72d69614c702?w=500&h=420&fit=crop', 'desc' => 'Vibrant latex inks for outdoor durability.'],
+        ['title' => 'Product Packaging Set', 'category' => 'packaging', 'format' => 'box', 'price' => 29.00, 'rating' => 4.4, 'popularity' => 80, 'stock' => true, 'badge' => 'Custom', 'image' => 'https://images.unsplash.com/photo-1453689472869-23f81f0b89dd?w=500&h=420&fit=crop', 'desc' => 'Rigid boxes with embossing and liners.'],
+    ];
+@endphp
+
+@section('content')
+    <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-14">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="space-y-4">
+                    <p class="text-sm uppercase tracking-[0.2em] text-blue-200">Curated print catalogue</p>
+                    <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Shop every format in one place.</h1>
+                    <p class="text-sm sm:text-base text-slate-200 max-w-xl">Browse books, marketing kits, signage, and packaging with ready-to-order specs. Filter fast, compare formats, and ship anywhere.</p>
+                    <div class="flex flex-wrap gap-3 text-xs text-slate-200">
+                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Lead times 48h</span>
+                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Color-managed</span>
+                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Proofing included</span>
+                    </div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl bg-white/10 p-4">
+                            <p class="text-xs text-blue-100">Average rating</p>
+                            <p class="text-3xl font-bold">4.6</p>
+                            <p class="text-xs text-blue-100">Feefo verified</p>
+                        </div>
+                        <div class="rounded-xl bg-white/10 p-4">
+                            <p class="text-xs text-blue-100">Formats</p>
+                            <p class="text-3xl font-bold">30+</p>
+                            <p class="text-xs text-blue-100">Books to boxes</p>
+                        </div>
+                        <div class="rounded-xl bg-white/10 p-4">
+                            <p class="text-xs text-blue-100">Turnaround</p>
+                            <p class="text-3xl font-bold">48h</p>
+                            <p class="text-xs text-blue-100">Express available</p>
+                        </div>
+                        <div class="rounded-xl bg-white/10 p-4">
+                            <p class="text-xs text-blue-100">Support</p>
+                            <p class="text-3xl font-bold">24/7</p>
+                            <p class="text-xs text-blue-100">Print specialists</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-10 sm:py-12 lg:py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <aside class="bg-gray-50 border border-gray-200 rounded-xl p-4 sm:p-5 h-fit space-y-5">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-sm font-semibold text-gray-900">Filters</h2>
+                    <button id="clearFilters" class="text-xs text-blue-600 hover:text-blue-700">Clear all</button>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold text-gray-700">Search</p>
+                    <div class="relative">
+                        <input id="searchProducts" type="text" placeholder="Find product or use case" class="w-full rounded-lg border border-gray-300 px-3 py-2 pr-10 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                        <svg class="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-xs font-semibold text-gray-700">Categories</p>
+                    @php
+                        $categories = ['books' => 'Books', 'marketing' => 'Marketing', 'stationery' => 'Stationery', 'signage' => 'Signage', 'packaging' => 'Packaging'];
+                    @endphp
+                    <div class="space-y-2">
+                        @foreach ($categories as $key => $label)
+                            <label class="flex items-center gap-2 text-sm text-gray-700">
+                                <input type="checkbox" value="{{ $key }}" class="category-filter rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                <span>{{ $label }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs font-semibold text-gray-700">
+                        <span>Max price</span>
+                        <span id="priceValue" class="text-blue-600">$150</span>
+                    </div>
+                    <input id="priceRange" type="range" min="5" max="150" step="1" value="120" class="w-full accent-blue-600">
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold text-gray-700">Format</p>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach (['paperback', 'hardback', 'square', 'layflat', 'magazine', 'notebook', 'pocket', 'cookbook', 'catalog', 'folder', 'poster', 'box'] as $format)
+                            <button type="button" class="format-chip rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-700 hover:border-blue-500" data-format="{{ $format }}">{{ ucfirst($format) }}</button>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold text-gray-700">Rating</p>
+                    <div class="space-y-1 text-sm text-gray-700">
+                        <label class="flex items-center gap-2"><input type="radio" name="rating" value="4.5" class="rating-filter text-blue-600">4.5+ stars</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="rating" value="4.0" class="rating-filter text-blue-600">4.0+ stars</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="rating" value="0" class="rating-filter text-blue-600" checked>Any rating</label>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold text-gray-700">Availability</p>
+                    <label class="flex items-center gap-2 text-sm text-gray-700">
+                        <input id="stockToggle" type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked>
+                        In stock only
+                    </label>
+                </div>
+            </aside>
+
+            <div class="lg:col-span-3 space-y-6">
+                <div class="flex flex-wrap items-center gap-3 justify-between">
+                    <div class="text-sm text-gray-600">Showing <span id="resultCount" class="font-semibold text-gray-900"></span> products</div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="text-gray-600">Sort</span>
+                        <select id="sortSelect" class="rounded-lg border border-gray-300 text-sm px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                            <option value="popular">Most popular</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="rating-desc">Rating: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    @foreach ($products as $product)
+                        <article
+                            class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                            data-product-card
+                            data-title="{{ strtolower($product['title']) }}"
+                            data-category="{{ $product['category'] }}"
+                            data-format="{{ $product['format'] }}"
+                            data-price="{{ $product['price'] }}"
+                            data-rating="{{ $product['rating'] }}"
+                            data-popularity="{{ $product['popularity'] }}"
+                            data-tags="{{ strtolower($product['desc']) }}"
+                            data-stock="{{ $product['stock'] ? '1' : '0' }}"
+                        >
+                            <div class="relative h-44 bg-gray-100 overflow-hidden">
+                                <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                                <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-gray-800 border border-gray-200">{{ $product['badge'] }}</span>
+                            </div>
+                            <div class="p-4 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <div class="text-xs uppercase tracking-wide text-blue-600 font-semibold">{{ ucfirst($product['category']) }}</div>
+                                    <div class="flex items-center gap-1 text-xs text-yellow-500">
+                                        <span class="font-semibold">{{ number_format($product['rating'], 1) }}</span>
+                                        <span>★</span>
+                                    </div>
+                                </div>
+                                <h3 class="text-base font-bold text-gray-900 leading-snug">{{ $product['title'] }}</h3>
+                                <p class="text-xs text-gray-600 leading-relaxed">{{ $product['desc'] }}</p>
+                                <div class="flex items-center justify-between pt-2">
+                                    <div class="text-lg font-bold text-gray-900">${{ number_format($product['price'], 2) }}</div>
+                                    <div class="flex items-center gap-2 text-xs text-gray-600">
+                                        <span class="rounded-full bg-gray-100 px-2 py-1">{{ ucfirst($product['format']) }}</span>
+                                        <span class="rounded-full bg-green-50 text-green-700 px-2 py-1">In stock</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchProducts');
+        const categoryChecks = document.querySelectorAll('.category-filter');
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        const ratingRadios = document.querySelectorAll('.rating-filter');
+        const stockToggle = document.getElementById('stockToggle');
+        const sortSelect = document.getElementById('sortSelect');
+        const clearBtn = document.getElementById('clearFilters');
+        const formatButtons = document.querySelectorAll('.format-chip');
+        const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+        const grid = document.getElementById('productGrid');
+        const resultCount = document.getElementById('resultCount');
+        let selectedFormat = '';
+
+        const updatePriceOutput = () => {
+            priceValue.textContent = `$${priceRange.value}`;
+        };
+
+        const sortCards = () => {
+            const sorted = cards.slice().sort((a, b) => {
+                const pa = parseFloat(a.dataset.price);
+                const pb = parseFloat(b.dataset.price);
+                const ra = parseFloat(a.dataset.rating);
+                const rb = parseFloat(b.dataset.rating);
+                const popA = parseFloat(a.dataset.popularity);
+                const popB = parseFloat(b.dataset.popularity);
+
+                switch (sortSelect.value) {
+                    case 'price-asc':
+                        return pa - pb;
+                    case 'price-desc':
+                        return pb - pa;
+                    case 'rating-desc':
+                        return rb - ra;
+                    default:
+                        return popB - popA;
+                }
+            });
+            sorted.forEach(card => grid.appendChild(card));
+            return sorted;
+        };
+
+        const applyFilters = () => {
+            const term = searchInput.value.trim().toLowerCase();
+            const activeCategories = Array.from(categoryChecks).filter(c => c.checked).map(c => c.value);
+            const maxPrice = parseFloat(priceRange.value);
+            const ratingChoice = Array.from(ratingRadios).find(r => r.checked);
+            const minRating = ratingChoice ? parseFloat(ratingChoice.value) : 0;
+            const requireStock = stockToggle.checked;
+            const sortedCards = sortCards();
+            let visible = 0;
+
+            sortedCards.forEach(card => {
+                const title = card.dataset.title;
+                const tags = card.dataset.tags;
+                const category = card.dataset.category;
+                const price = parseFloat(card.dataset.price);
+                const rating = parseFloat(card.dataset.rating);
+                const format = card.dataset.format;
+                const inStock = card.dataset.stock === '1';
+
+                const matchesTerm = term === '' || title.includes(term) || tags.includes(term);
+                const matchesCategory = activeCategories.length === 0 || activeCategories.includes(category);
+                const matchesPrice = price <= maxPrice;
+                const matchesRating = rating >= minRating;
+                const matchesStock = !requireStock || inStock;
+                const matchesFormat = selectedFormat === '' || format === selectedFormat;
+
+                const show = matchesTerm && matchesCategory && matchesPrice && matchesRating && matchesStock && matchesFormat;
+                card.classList.toggle('hidden', !show);
+                if (show) visible += 1;
+            });
+
+            resultCount.textContent = visible;
+        };
+
+        const resetFilters = () => {
+            searchInput.value = '';
+            categoryChecks.forEach(c => { c.checked = false; });
+            ratingRadios.forEach(r => { r.checked = r.value === '0'; });
+            priceRange.value = 120;
+            selectedFormat = '';
+            stockToggle.checked = true;
+            formatButtons.forEach(btn => btn.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-700'));
+            updatePriceOutput();
+            applyFilters();
+        };
+
+        priceRange.addEventListener('input', () => { updatePriceOutput(); applyFilters(); });
+        searchInput.addEventListener('input', applyFilters);
+        categoryChecks.forEach(check => check.addEventListener('change', applyFilters));
+        ratingRadios.forEach(radio => radio.addEventListener('change', applyFilters));
+        stockToggle.addEventListener('change', applyFilters);
+        sortSelect.addEventListener('change', applyFilters);
+        clearBtn.addEventListener('click', resetFilters);
+
+        formatButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const value = btn.dataset.format;
+                selectedFormat = selectedFormat === value ? '' : value;
+                formatButtons.forEach(b => b.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-700'));
+                if (selectedFormat) {
+                    const activeBtn = Array.from(formatButtons).find(b => b.dataset.format === selectedFormat);
+                    if (activeBtn) activeBtn.classList.add('border-blue-500', 'bg-blue-50', 'text-blue-700');
+                }
+                applyFilters();
+            });
+        });
+
+        updatePriceOutput();
+        applyFilters();
+    });
+</script>
+@endpush

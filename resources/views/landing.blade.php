@@ -147,77 +147,6 @@
         </div>
     </section>
 
-    <!-- Best Sellers Section -->
-    <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">Best Sellers</h2>
-            <div class="relative">
-                <div class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4" id="bestSellersContainer">
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop" alt="Books" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Books</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=400&fit=crop" alt="Business Cards" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Business Cards</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=400&fit=crop" alt="Stickers" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Stickers</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=400&fit=crop" alt="Postcards and Invitations" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Postcards and Invitations</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=400&fit=crop" alt="Booklets" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Booklets</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="scrollBestSellers('left')" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                </button>
-                <button onclick="scrollBestSellers('right')" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
     <section class="py-12 sm:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -270,6 +199,127 @@
                     </div>
                     <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Tons of products</h3>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">Best Sellers</h2>
+            <div class="relative">
+                <div class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab scroll-smooth select-none touch-pan-y" id="bestSellersContainer">
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop" alt="Books" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Books</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=400&fit=crop" alt="Business Cards" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Business Cards</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=400&fit=crop" alt="Stickers" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Stickers</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=400&fit=crop" alt="Postcards and Invitations" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Postcards and Invitations</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=400&fit=crop" alt="Booklets" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Booklets</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Catalogs</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop" alt="Magazines" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Magazines</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1504198458632-1631c46f4506?w=400&h=400&fit=crop" alt="Banners" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Banners</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Stationery" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Stationery</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=400&fit=crop" alt="Signage" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Signage</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="scrollBestSellers('left')" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="scrollBestSellers('right')" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -625,7 +675,7 @@
 
     function scrollBestSellers(direction) {
         const container = document.getElementById('bestSellersContainer');
-        const scrollAmount = 300;
+        const scrollAmount = 320;
         if (direction === 'left') {
             container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         } else {
@@ -641,6 +691,133 @@
         } else {
             container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
+    }
+
+    // Smooth drag scrolling with momentum
+    function initDragScroll() {
+        const container = document.getElementById('bestSellersContainer');
+        if (!container) return;
+
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let velocity = 0;
+        let lastX = 0;
+        let lastTime = 0;
+        let animationId = null;
+
+        const maxVelocity = 5.5;
+
+        const stopMomentum = () => {
+            if (animationId) cancelAnimationFrame(animationId);
+        };
+
+        const applyMomentum = () => {
+            let currentVelocity = velocity;
+            const friction = 0.96;
+            const minVelocity = 0.05;
+
+            const animate = () => {
+                if (Math.abs(currentVelocity) > minVelocity) {
+                    container.scrollLeft += currentVelocity * 20;
+                    currentVelocity *= friction;
+                    animationId = requestAnimationFrame(animate);
+                }
+            };
+
+            animationId = requestAnimationFrame(animate);
+        };
+
+        container.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
+            isDown = true;
+            startX = e.pageX;
+            scrollLeft = container.scrollLeft;
+            lastX = startX;
+            lastTime = Date.now();
+            velocity = 0;
+            container.style.cursor = 'grabbing';
+            stopMomentum();
+            e.preventDefault();
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (isDown) {
+                isDown = false;
+                container.style.cursor = 'grab';
+                if (Math.abs(velocity) > 0.5) {
+                    applyMomentum();
+                }
+            }
+        });
+
+        container.addEventListener('mouseup', () => {
+            if (isDown) {
+                isDown = false;
+                container.style.cursor = 'grab';
+                if (Math.abs(velocity) > 0.5) {
+                    applyMomentum();
+                }
+            }
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+
+            const x = e.pageX;
+            const walk = x - startX;
+            const now = Date.now();
+            const timeDelta = Math.max(now - lastTime, 1);
+
+            velocity = Math.max(Math.min((lastX - x) / timeDelta, maxVelocity), -maxVelocity);
+            lastX = x;
+            lastTime = now;
+
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support
+        container.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX;
+            scrollLeft = container.scrollLeft;
+            lastX = startX;
+            lastTime = Date.now();
+            velocity = 0;
+            stopMomentum();
+        });
+
+        container.addEventListener('touchend', () => {
+            if (isDown) {
+                isDown = false;
+                if (Math.abs(velocity) > 0.5) {
+                    applyMomentum();
+                }
+            }
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+
+            const x = e.touches[0].pageX;
+            const walk = x - startX;
+            const now = Date.now();
+            const timeDelta = Math.max(now - lastTime, 1);
+
+            velocity = Math.max(Math.min((lastX - x) / timeDelta, maxVelocity), -maxVelocity);
+            lastX = x;
+            lastTime = now;
+
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Initialize on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDragScroll);
+    } else {
+        initDragScroll();
     }
 </script>
 @endpush
