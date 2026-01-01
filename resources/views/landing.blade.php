@@ -220,34 +220,34 @@
                         </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/business-cards" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=400&fit=crop" alt="Business Cards" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Business Cards</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/stickers" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=400&fit=crop" alt="Stickers" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Stickers</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/postcards-invitations" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
                                 <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=400&fit=crop" alt="Postcards and Invitations" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Postcards and Invitations</h3>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
                         <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
