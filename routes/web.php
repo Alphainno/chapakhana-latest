@@ -213,3 +213,28 @@ Route::get('/banners/pop-up-banners', function () {
 Route::get('/banners/hanging-banners', function () {
     return view('book-configure', ['productType' => 'hanging-banners', 'productTitle' => 'Hanging Banners']);
 });
+
+// Stationery Routes
+Route::get('/stationery', function () {
+    return view('stationery');
+});
+
+Route::get('/stationery/letterheads', function () {
+    return view('book-configure', ['productType' => 'letterheads', 'productTitle' => 'Letterheads']);
+});
+Route::get('/stationery/envelopes', function () {
+    return view('book-configure', ['productType' => 'envelopes', 'productTitle' => 'Envelopes']);
+});
+Route::get('/stationery/notepads', function () {
+    return view('book-configure', ['productType' => 'notepads', 'productTitle' => 'Notepads']);
+});
+Route::get('/stationery/folders', function () {
+    return view('book-configure', ['productType' => 'folders', 'productTitle' => 'Folders']);
+});
+Route::get('/stationery/notebooks', function () {
+    return view('book-configure', ['productType' => 'notebooks', 'productTitle' => 'Notebooks']);
+});
+Route::get('/stationery/sticky-notes', function () {
+    return view('book-configure', ['productType' => 'sticky-notes', 'productTitle' => 'Sticky Notes']);
+});
+

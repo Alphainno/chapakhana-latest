@@ -416,7 +416,7 @@
                     </a>
                 </div>
                 <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="/catalogs" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=300&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
                         </div>
@@ -426,7 +426,7 @@
                     </a>
                 </div>
                 <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1586210579191-33b45e38fa8c?w=300&h=300&fit=crop" alt="Magazines" class="w-full h-full object-contain">
                         </div>
@@ -436,7 +436,7 @@
                     </a>
                 </div>
                 <div class="group">
-                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="/booklets" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=300&h=300&fit=crop" alt="Booklets" class="w-full h-full object-contain">
                         </div>
@@ -446,24 +446,24 @@
                     </a>
                 </div>
                 <div class="group">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Manuals" class="w-full h-full object-contain">
                         </div>
                         <div class="p-4 text-center bg-white">
                             <h3 class="text-base sm:text-lg font-semibold text-gray-900">Manuals</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="group">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=300&fit=crop" alt="Zines" class="w-full h-full object-contain">
                         </div>
                         <div class="p-4 text-center bg-white">
                             <h3 class="text-base sm:text-lg font-semibold text-gray-900">Zines</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -478,43 +478,43 @@
                     <p class="text-base text-gray-700 mb-6 leading-relaxed">
                         Make your message stand out with custom banners, indoor signs, and storefront displays. Durable, professional, and budget-friendly—perfect for promotions, trade shows, and more.
                     </p>
-                    <a href="#" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300">
+                    <a href="/banners" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300">
                         Browse All
                     </a>
                 </div>
                 <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <a href="/banners/roll-up-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1557425493-6f90ae4659fc?w=400&h=300&fit=crop" alt="Retractable Banner Stands" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="p-4 text-center">
                             <h3 class="text-sm sm:text-base font-semibold text-gray-900 leading-tight">Retractable Banner<br>Stands</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/banners/fabric-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop" alt="Advertising Flags" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="p-4 text-center">
                             <h3 class="text-sm sm:text-base font-semibold text-gray-900">Advertising Flags</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/banners/vinyl-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Vinyl Banners" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="p-4 text-center">
                             <h3 class="text-sm sm:text-base font-semibold text-gray-900">Vinyl Banners</h3>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    </a>
+                    <a href="/banners/mesh-banners" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="aspect-[4/3] bg-white flex items-center justify-center p-6">
                             <img src="https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?w=400&h=300&fit=crop" alt="Foam Board Signs" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="p-4 text-center">
                             <h3 class="text-sm sm:text-base font-semibold text-gray-900">Foam Board Signs</h3>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

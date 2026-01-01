@@ -93,18 +93,22 @@
     </div>
 
     <!-- Main Navigation -->
-    <nav class="bg-gray-50 border-t border-gray-200 overflow-x-auto scrollbar-hide">
+    <nav class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4 sm:gap-6 md:gap-8 h-12 md:h-14">
-                <a href="/" class="{{ request()->is('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Home</a>
-                <a href="/shop" class="{{ request()->is('shop') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Shop</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Marketing Materials</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Business Cards</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Stickers & Labels</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Brochures & Flyers</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Banners & Signs</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Promotional Items</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900 text-xs sm:text-sm md:text-base whitespace-nowrap">Postcards</a>
+            <div class="overflow-x-auto scrollbar-hide -mx-4 sm:-mx-6 lg:-mx-8">
+                <div class="flex items-center gap-4 sm:gap-6 md:gap-8 h-12 md:h-14 pl-4 sm:pl-6 lg:pl-8 pr-4 sm:pr-6 lg:pr-8">
+                    <a href="/" class="{{ request()->is('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Home</a>
+                    <a href="/shop" class="{{ request()->is('shop') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Shop</a>
+                    <a href="/books" class="{{ request()->is('books*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Books</a>
+                    <a href="/business-cards" class="{{ request()->is('business-cards*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Business Cards</a>
+                    <a href="/stickers" class="{{ request()->is('stickers*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Stickers & Labels</a>
+                    <a href="/booklets" class="{{ request()->is('booklets*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Brochures & Flyers</a>
+                    <a href="/banners" class="{{ request()->is('banners*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Banners & Signs</a>
+                    <a href="/catalogs" class="{{ request()->is('catalogs*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Catalogs</a>
+                    <a href="/magazines" class="{{ request()->is('magazines*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Magazines</a>
+                    <a href="/stationery" class="{{ request()->is('stationery*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Stationery</a>
+                    <a href="/books" class="{{ request()->is('zines*') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-gray-900' }} text-xs sm:text-sm md:text-base whitespace-nowrap">Zines</a>
+                </div>
             </div>
         </div>
     </nav>
