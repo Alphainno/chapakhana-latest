@@ -14,6 +14,13 @@ Route::get('/books', function () {
     return view('books');
 });
 
+// Auth routes
+Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
 // Individual book product routes
 Route::get('/books/paperback', function () {
     return view('book-configure', ['productType' => 'paperback', 'productTitle' => 'Paperback book']);
@@ -236,5 +243,15 @@ Route::get('/stationery/notebooks', function () {
 });
 Route::get('/stationery/sticky-notes', function () {
     return view('book-configure', ['productType' => 'sticky-notes', 'productTitle' => 'Sticky Notes']);
+});
+
+// Cart Routes
+Route::prefix('cart')->name('cart.')->group(function () {
+    Route::get('/', 'App\Http\Controllers\CartController@index')->name('index');
+    Route::post('/add', 'App\Http\Controllers\CartController@add')->name('add');
+    Route::delete('/remove', 'App\Http\Controllers\CartController@remove')->name('remove');
+    Route::post('/update', 'App\Http\Controllers\CartController@update')->name('update');
+    Route::post('/clear', 'App\Http\Controllers\CartController@clear')->name('clear');
+    Route::get('/count', 'App\Http\Controllers\CartController@getCount')->name('count');
 });
 

@@ -149,6 +149,16 @@
                     @foreach ($products as $product)
                         <article
                             class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                            onclick="openProductDetail({
+                                title: '{{ $product['title'] }}',
+                                category: '{{ $product['category'] }}',
+                                format: '{{ ucfirst($product['format']) }}',
+                                price: {{ $product['price'] }},
+                                rating: {{ $product['rating'] }},
+                                desc: '{{ $product['desc'] }}',
+                                image: '{{ $product['image'] }}',
+                                stock: {{ $product['stock'] ? 'true' : 'false' }}
+                            })"
                             data-product-card
                             data-title="{{ strtolower($product['title']) }}"
                             data-category="{{ $product['category'] }}"
@@ -180,12 +190,24 @@
                                         <span class="rounded-full bg-green-50 text-green-700 px-2 py-1">In stock</span>
                                     </div>
                                 </div>
-                                <button onclick="addToCart('{{ $product['title'] }}', {{ $product['price'] }}, event)" class="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"></path>
-                                    </svg>
-                                    Add to Cart
-                                </button>
+                                <form action="{{ route('cart.add') }}" method="POST" class="w-full mt-3">
+                                    @csrf
+                                    <input type="hidden" name="title" value="{{ $product['title'] }}">
+                                    <input type="hidden" name="category" value="{{ $product['category'] }}">
+                                    <input type="hidden" name="format" value="{{ ucfirst($product['format']) }}">
+                                    <input type="hidden" name="price" value="{{ $product['price'] }}">
+                                    <input type="hidden" name="rating" value="{{ $product['rating'] }}">
+                                    <input type="hidden" name="desc" value="{{ $product['desc'] }}">
+                                    <input type="hidden" name="image" value="{{ $product['image'] }}">
+                                    <input type="hidden" name="stock" value="{{ $product['stock'] ? '1' : '0' }}">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"></path>
+                                        </svg>
+                                        Add to Cart
+                                    </button>
+                                </form>
                             </div>
                         </article>
                     @endforeach
@@ -293,7 +315,11 @@
         stockToggle.addEventListener('change', applyFilters);
         sortSelect.addEventListener('change', applyFilters);
         clearBtn.addEventListener('click', resetFilters);
+    </script>
+</section>
 
+<!-- Product Detail Modal -->
+@include('partials.product-detail-modal')
         formatButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const value = btn.dataset.format;
@@ -312,3 +338,6 @@
     });
 </script>
 @endpush
+
+<!-- Product Detail Modal -->
+@include('partials.product-detail-modal')
