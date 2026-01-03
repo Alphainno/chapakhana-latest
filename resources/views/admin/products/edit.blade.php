@@ -13,100 +13,109 @@
         <h1 class="text-2xl font-bold text-gray-900">Edit Product</h1>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-6">
-        <form action="{{ route('admin.products.update', $product) }}" method="POST" class="space-y-6">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+        <form action="{{ route('admin.products.update', $product) }}" method="POST" class="space-y-8">
             @csrf
             @method('PUT')
 
             <div class="grid grid-cols-2 gap-6">
                 <div class="col-span-2">
-                    <label for="title" class="block text-sm font-medium text-gray-700">Title*</label>
-                    <input type="text" name="title" id="title" value="{{ old('title', $product->title) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="title" class="block text-sm font-semibold text-gray-800 mb-2">Title <span class="text-red-500">*</span></label>
+                    <input type="text" name="title" id="title" value="{{ old('title', $product->title) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter product title" required>
                     @error('title')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="category_id" class="block text-sm font-medium text-gray-700">Category*</label>
-                    <select name="category_id" id="category_id" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="category_id" class="block text-sm font-semibold text-gray-800 mb-2">Category <span class="text-red-500">*</span></label>
+                    <select name="category_id" id="category_id" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" required>
                         <option value="">Select Category</option>
                         @foreach($categories as $category)
                         <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                         @endforeach
                     </select>
                     @error('category_id')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="format" class="block text-sm font-medium text-gray-700">Format*</label>
-                    <input type="text" name="format" id="format" value="{{ old('format', $product->format) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="format" class="block text-sm font-semibold text-gray-800 mb-2">Format <span class="text-red-500">*</span></label>
+                    <input type="text" name="format" id="format" value="{{ old('format', $product->format) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="e.g., Paperback, Hardback" required>
                     @error('format')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="price" class="block text-sm font-medium text-gray-700">Price*</label>
-                    <input type="number" name="price" id="price" step="0.01" min="0" value="{{ old('price', $product->price) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="price" class="block text-sm font-semibold text-gray-800 mb-2">Price <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">$</span>
+                        <input type="number" name="price" id="price" step="0.01" min="0" value="{{ old('price', $product->price) }}" class="mt-1 block w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="0.00" required>
+                    </div>
                     @error('price')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="rating" class="block text-sm font-medium text-gray-700">Rating (0-5)</label>
-                    <input type="number" name="rating" id="rating" step="0.1" min="0" max="5" value="{{ old('rating', $product->rating) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="rating" class="block text-sm font-semibold text-gray-800 mb-2">Rating (0-5)</label>
+                    <input type="number" name="rating" id="rating" step="0.1" min="0" max="5" value="{{ old('rating', $product->rating) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="4.5">
                     @error('rating')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="popularity" class="block text-sm font-medium text-gray-700">Popularity (0-100)</label>
-                    <input type="number" name="popularity" id="popularity" min="0" max="100" value="{{ old('popularity', $product->popularity) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="popularity" class="block text-sm font-semibold text-gray-800 mb-2">Popularity (0-100)</label>
+                    <input type="number" name="popularity" id="popularity" min="0" max="100" value="{{ old('popularity', $product->popularity) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="75">
                     @error('popularity')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="badge" class="block text-sm font-medium text-gray-700">Badge</label>
-                    <input type="text" name="badge" id="badge" value="{{ old('badge', $product->badge) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="badge" class="block text-sm font-semibold text-gray-800 mb-2">Badge</label>
+                    <input type="text" name="badge" id="badge" value="{{ old('badge', $product->badge) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="e.g., New, Bestseller">
                     @error('badge')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="col-span-2">
-                    <label for="description" class="block text-sm font-medium text-gray-700">Description*</label>
-                    <textarea name="description" id="description" rows="3" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>{{ old('description', $product->description) }}</textarea>
+                    <label for="description" class="block text-sm font-semibold text-gray-800 mb-2">Description <span class="text-red-500">*</span></label>
+                    <textarea name="description" id="description" rows="4" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter product description" required>{{ old('description', $product->description) }}</textarea>
                     @error('description')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="col-span-2">
-                    <label for="image" class="block text-sm font-medium text-gray-700">Image URL*</label>
-                    <input type="url" name="image" id="image" value="{{ old('image', $product->image) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Image URL <span class="text-red-500">*</span></label>
+                    <input type="url" name="image" id="image" value="{{ old('image', $product->image) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="https://images.unsplash.com/..." required>
                     @error('image')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                     @if($product->image)
-                    <img src="{{ $product->image }}" alt="Current image" class="mt-2 w-32 h-32 object-cover rounded">
+                    <div class="mt-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <p class="text-xs font-medium text-gray-700 mb-2">Current Image:</p>
+                        <img src="{{ $product->image }}" alt="Current image" class="w-40 h-40 object-cover rounded-lg shadow-sm">
+                    </div>
                     @endif
                 </div>
+            </div>
 
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 space-y-3">
+                <p class="text-sm font-semibold text-gray-800 mb-3">Status Options</p>
                 <div class="flex items-center">
-                    <input type="checkbox" name="stock" id="stock" value="1" {{ old('stock', $product->stock) ? 'checked' : '' }} class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                    <label for="stock" class="ml-2 block text-sm text-gray-700">In Stock</label>
+                    <input type="checkbox" name="stock" id="stock" value="1" {{ old('stock', $product->stock) ? 'checked' : '' }} class="w-5 h-5 rounded border-2 border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="stock" class="ml-3 text-sm font-medium text-gray-700">In Stock</label>
                 </div>
 
                 <div class="flex items-center">
-                    <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', $product->is_active) ? 'checked' : '' }} class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                    <label for="is_active" class="ml-2 block text-sm text-gray-700">Active</label>
+                    <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', $product->is_active) ? 'checked' : '' }} class="w-5 h-5 rounded border-2 border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="is_active" class="ml-3 text-sm font-medium text-gray-700">Active</label>
                 </div>
             </div>
 

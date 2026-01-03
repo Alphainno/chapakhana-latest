@@ -34,9 +34,12 @@
                 </a>
                 <a href="{{ route('admin.formats.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.formats.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Formats
+                </a>
+            </div>
+        </div>
 
         {{-- <div class="pt-2">
-            <p class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider"></p>
+            <p class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Website</p>
         </div> --}}
 
         <a href="#" class="sidebar-link text-gray-700 hover:bg-gray-100 flex items-center gap-3 px-4 py-3 rounded-lg">

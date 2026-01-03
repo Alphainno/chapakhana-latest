@@ -13,97 +13,103 @@
         <h1 class="text-2xl font-bold text-gray-900">Create Product</h1>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-6">
-        <form action="{{ route('admin.products.store') }}" method="POST" class="space-y-6">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+        <form action="{{ route('admin.products.store') }}" method="POST" class="space-y-8">
             @csrf
 
             <div class="grid grid-cols-2 gap-6">
                 <div class="col-span-2">
-                    <label for="title" class="block text-sm font-medium text-gray-700">Title*</label>
-                    <input type="text" name="title" id="title" value="{{ old('title') }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="title" class="block text-sm font-semibold text-gray-800 mb-2">Title <span class="text-red-500">*</span></label>
+                    <input type="text" name="title" id="title" value="{{ old('title') }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter product title" required>
                     @error('title')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="category_id" class="block text-sm font-medium text-gray-700">Category*</label>
-                    <select name="category_id" id="category_id" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="category_id" class="block text-sm font-semibold text-gray-800 mb-2">Category <span class="text-red-500">*</span></label>
+                    <select name="category_id" id="category_id" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" required>
                         <option value="">Select Category</option>
                         @foreach($categories as $category)
                         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                         @endforeach
                     </select>
                     @error('category_id')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="format" class="block text-sm font-medium text-gray-700">Format*</label>
-                    <input type="text" name="format" id="format" value="{{ old('format') }}" placeholder="e.g., Paperback, Hardback" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="format" class="block text-sm font-semibold text-gray-800 mb-2">Format <span class="text-red-500">*</span></label>
+                    <input type="text" name="format" id="format" value="{{ old('format') }}" placeholder="e.g., Paperback, Hardback" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" required>
                     @error('format')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="price" class="block text-sm font-medium text-gray-700">Price*</label>
-                    <input type="number" name="price" id="price" step="0.01" min="0" value="{{ old('price') }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    <label for="price" class="block text-sm font-semibold text-gray-800 mb-2">Price <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">$</span>
+                        <input type="number" name="price" id="price" step="0.01" min="0" value="{{ old('price') }}" class="mt-1 block w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="0.00" required>
+                    </div>
                     @error('price')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="rating" class="block text-sm font-medium text-gray-700">Rating (0-5)</label>
-                    <input type="number" name="rating" id="rating" step="0.1" min="0" max="5" value="{{ old('rating', 4.5) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="rating" class="block text-sm font-semibold text-gray-800 mb-2">Rating (0-5)</label>
+                    <input type="number" name="rating" id="rating" step="0.1" min="0" max="5" value="{{ old('rating', 4.5) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="4.5">
                     @error('rating')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="popularity" class="block text-sm font-medium text-gray-700">Popularity (0-100)</label>
-                    <input type="number" name="popularity" id="popularity" min="0" max="100" value="{{ old('popularity', 75) }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="popularity" class="block text-sm font-semibold text-gray-800 mb-2">Popularity (0-100)</label>
+                    <input type="number" name="popularity" id="popularity" min="0" max="100" value="{{ old('popularity', 75) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="75">
                     @error('popularity')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="badge" class="block text-sm font-medium text-gray-700">Badge</label>
-                    <input type="text" name="badge" id="badge" value="{{ old('badge') }}" placeholder="e.g., New, Bestseller" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <label for="badge" class="block text-sm font-semibold text-gray-800 mb-2">Badge</label>
+                    <input type="text" name="badge" id="badge" value="{{ old('badge') }}" placeholder="e.g., New, Bestseller" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
                     @error('badge')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="col-span-2">
-                    <label for="description" class="block text-sm font-medium text-gray-700">Description*</label>
-                    <textarea name="description" id="description" rows="3" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>{{ old('description') }}</textarea>
+                    <label for="description" class="block text-sm font-semibold text-gray-800 mb-2">Description <span class="text-red-500">*</span></label>
+                    <textarea name="description" id="description" rows="4" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter product description" required>{{ old('description') }}</textarea>
                     @error('description')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="col-span-2">
-                    <label for="image" class="block text-sm font-medium text-gray-700">Image URL* (Unsplash)</label>
-                    <input type="url" name="image" id="image" value="{{ old('image') }}" placeholder="https://images.unsplash.com/..." class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
-                    <p class="mt-1 text-xs text-gray-500">Get images from <a href="https://unsplash.com" target="_blank" class="text-blue-600">unsplash.com</a></p>
+                    <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Image URL <span class="text-red-500">*</span> (Unsplash)</label>
+                    <input type="url" name="image" id="image" value="{{ old('image') }}" placeholder="https://images.unsplash.com/..." class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" required>
+                    <p class="mt-2 text-xs text-gray-500">Get high-quality images from <a href="https://unsplash.com" target="_blank" class="text-blue-600 hover:underline">unsplash.com</a></p>
                     @error('image')
-                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
+            </div>
 
+            <div class="bg-gray-50 p-5 rounded-lg border border-gray-200 space-y-3">
+                <p class="text-sm font-semibold text-gray-800 mb-3">Status Options</p>
                 <div class="flex items-center">
-                    <input type="checkbox" name="stock" id="stock" value="1" {{ old('stock', true) ? 'checked' : '' }} class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                    <label for="stock" class="ml-2 block text-sm text-gray-700">In Stock</label>
+                    <input type="checkbox" name="stock" id="stock" value="1" {{ old('stock', true) ? 'checked' : '' }} class="w-5 h-5 rounded border-2 border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="stock" class="ml-3 text-sm font-medium text-gray-700">In Stock</label>
                 </div>
 
                 <div class="flex items-center">
-                    <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                    <label for="is_active" class="ml-2 block text-sm text-gray-700">Active</label>
+                    <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="w-5 h-5 rounded border-2 border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="is_active" class="ml-3 text-sm font-medium text-gray-700">Active</label>
                 </div>
             </div>
 

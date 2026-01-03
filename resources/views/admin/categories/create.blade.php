@@ -13,29 +13,32 @@
         <h1 class="text-2xl font-bold text-gray-900">Create Category</h1>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
         <form action="{{ route('admin.categories.store') }}" method="POST" class="space-y-6">
             @csrf
 
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Name*</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                <label for="name" class="block text-sm font-semibold text-gray-800 mb-2">Name <span class="text-red-500">*</span></label>
+                <input type="text" name="name" id="name" value="{{ old('name') }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter category name" required>
                 @error('name')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>
 
             <div>
-                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                <textarea name="description" id="description" rows="4" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('description') }}</textarea>
+                <label for="description" class="block text-sm font-semibold text-gray-800 mb-2">Description</label>
+                <textarea name="description" id="description" rows="5" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Enter category description (optional)">{{ old('description') }}</textarea>
                 @error('description')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>
 
-            <div class="flex items-center">
-                <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                <label for="is_active" class="ml-2 block text-sm text-gray-700">Active</label>
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <div class="flex items-center">
+                    <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="w-5 h-5 rounded border-2 border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="is_active" class="ml-3 text-sm font-medium text-gray-700">Active Status</label>
+                </div>
+                <p class="mt-2 ml-8 text-xs text-gray-500">Check to make this category visible on the shop page</p>
             </div>
 
             <div class="flex gap-3">
