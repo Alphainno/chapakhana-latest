@@ -11,36 +11,38 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-14">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <p class="text-sm uppercase tracking-[0.2em] text-blue-200">Curated print catalogue</p>
-                    <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Shop every format in one place.</h1>
-                    <p class="text-sm sm:text-base text-slate-200 max-w-xl">Browse books, marketing kits, signage, and packaging with ready-to-order specs. Filter fast, compare formats, and ship anywhere.</p>
+                    <p class="text-sm uppercase tracking-[0.2em] text-blue-200">{{ $hero->subtitle }}</p>
+                    <h1 class="text-3xl sm:text-4xl font-bold leading-tight">{{ $hero->title }}</h1>
+                    <p class="text-sm sm:text-base text-slate-200 max-w-xl">{{ $hero->description }}</p>
                     <div class="flex flex-wrap gap-3 text-xs text-slate-200">
-                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Lead times 48h</span>
-                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Color-managed</span>
-                        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">Proofing included</span>
+                        @if($hero->badges)
+                            @foreach($hero->badges as $badge)
+                                <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1">{{ $badge }}</span>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                 <div class="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="rounded-xl bg-white/10 p-4">
-                            <p class="text-xs text-blue-100">Average rating</p>
-                            <p class="text-3xl font-bold">4.6</p>
-                            <p class="text-xs text-blue-100">Feefo verified</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat1_label }}</p>
+                            <p class="text-3xl font-bold">{{ $hero->stat1_value }}</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat1_sublabel }}</p>
                         </div>
                         <div class="rounded-xl bg-white/10 p-4">
-                            <p class="text-xs text-blue-100">Formats</p>
-                            <p class="text-3xl font-bold">30+</p>
-                            <p class="text-xs text-blue-100">Books to boxes</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat2_label }}</p>
+                            <p class="text-3xl font-bold">{{ $hero->stat2_value }}</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat2_sublabel }}</p>
                         </div>
                         <div class="rounded-xl bg-white/10 p-4">
-                            <p class="text-xs text-blue-100">Turnaround</p>
-                            <p class="text-3xl font-bold">48h</p>
-                            <p class="text-xs text-blue-100">Express available</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat3_label }}</p>
+                            <p class="text-3xl font-bold">{{ $hero->stat3_value }}</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat3_sublabel }}</p>
                         </div>
                         <div class="rounded-xl bg-white/10 p-4">
-                            <p class="text-xs text-blue-100">Support</p>
-                            <p class="text-3xl font-bold">24/7</p>
-                            <p class="text-xs text-blue-100">Print specialists</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat4_label }}</p>
+                            <p class="text-3xl font-bold">{{ $hero->stat4_value }}</p>
+                            <p class="text-xs text-blue-100">{{ $hero->stat4_sublabel }}</p>
                         </div>
                     </div>
                 </div>

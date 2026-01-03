@@ -18,8 +18,9 @@ Route::get('/shop', function () {
 
     $categories = Category::where('is_active', true)->get();
     $formats = Format::where('is_active', true)->orderBy('name')->get();
+    $hero = \App\Models\ShopHeroSection::first();
 
-    return view('shop', compact('products', 'categories', 'formats'));
+    return view('shop', compact('products', 'categories', 'formats', 'hero'));
 });
 
 Route::get('/books', function () {
@@ -65,6 +66,10 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('dashboard/checkout-fields', App\Http\Controllers\Admin\CheckoutFieldController::class, [
         'as' => 'admin'
     ])->only(['index', 'edit', 'update']);
+
+    // Shop hero section management
+    Route::get('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'edit'])->name('admin.shop-hero.edit');
+    Route::put('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'update'])->name('admin.shop-hero.update');
 });
 
 // Individual book product routes
