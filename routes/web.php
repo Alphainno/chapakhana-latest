@@ -70,6 +70,16 @@ Route::middleware(['admin'])->group(function () {
     // Shop hero section management
     Route::get('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'edit'])->name('admin.shop-hero.edit');
     Route::put('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'update'])->name('admin.shop-hero.update');
+
+    // Service Category management
+    Route::resource('dashboard/service-categories', App\Http\Controllers\Admin\ServiceCategoryController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Service Product management
+    Route::resource('dashboard/service-products', App\Http\Controllers\Admin\ServiceProductController::class, [
+        'as' => 'admin'
+    ]);
 });
 
 // Individual book product routes

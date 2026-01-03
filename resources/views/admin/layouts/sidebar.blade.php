@@ -51,23 +51,23 @@
         <div class="space-y-1">
             <button type="button"
                 onclick="toggleDropdown('services-dropdown')"
-                class="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition group text-gray-700 hover:bg-gray-100">
+                class="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition group {{ request()->routeIs('admin.service-categories.*') || request()->routeIs('admin.service-products.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <div class="flex items-center gap-3">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                     </svg>
                     <span class="font-medium">Services</span>
                 </div>
-                <svg id="services-dropdown-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg id="services-dropdown-arrow" class="w-4 h-4 transition-transform duration-200 {{ request()->routeIs('admin.service-categories.*') || request()->routeIs('admin.service-products.*') ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </button>
 
-            <div id="services-dropdown" class="hidden pl-12 space-y-1 mt-1">
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
+            <div id="services-dropdown" class="{{ request()->routeIs('admin.service-categories.*') || request()->routeIs('admin.service-products.*') ? '' : 'hidden' }} pl-12 space-y-1 mt-1">
+                <a href="{{ route('admin.service-categories.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.service-categories.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Categories
                 </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
+                <a href="{{ route('admin.service-products.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.service-products.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Products
                 </a>
                 <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
