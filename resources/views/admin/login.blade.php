@@ -46,7 +46,7 @@
 
                 <form class="space-y-6" action="{{ route('admin.login.post') }}" method="POST">
                     @csrf
-                    
+
                     <!-- Email -->
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
@@ -58,12 +58,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                                 </svg>
                             </div>
-                            <input 
-                                id="email" 
-                                name="email" 
-                                type="email" 
-                                autocomplete="email" 
-                                required 
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required
                                 value="{{ old('email') }}"
                                 class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                                 placeholder="admin@chapakhana.com"
@@ -82,12 +82,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                                 </svg>
                             </div>
-                            <input 
-                                id="password" 
-                                name="password" 
-                                type="password" 
-                                autocomplete="current-password" 
-                                required 
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                required
                                 class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                                 placeholder="••••••••"
                             >
@@ -96,10 +96,10 @@
 
                     <!-- Remember me -->
                     <div class="flex items-center">
-                        <input 
-                            id="remember" 
-                            name="remember" 
-                            type="checkbox" 
+                        <input
+                            id="remember"
+                            name="remember"
+                            type="checkbox"
                             class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         >
                         <label for="remember" class="ml-2 block text-sm text-gray-700">
@@ -109,8 +109,8 @@
 
                     <!-- Submit Button -->
                     <div>
-                        <button 
-                            type="submit" 
+                        <button
+                            type="submit"
                             class="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition transform hover:scale-[1.02]"
                         >
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

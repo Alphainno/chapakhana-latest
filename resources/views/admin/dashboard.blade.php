@@ -35,7 +35,7 @@
                     </svg>
                     <span>View Site</span>
                 </a>
-                
+
                 <div class="flex items-center gap-2">
                     <span class="hidden sm:inline text-sm text-gray-700 font-medium">{{ Auth::user()->name }}</span>
                     <form action="{{ route('admin.logout') }}" method="POST" class="inline">
