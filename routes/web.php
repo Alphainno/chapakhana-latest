@@ -14,9 +14,9 @@ Route::get('/shop', function () {
         ->where('stock', true)
         ->latest()
         ->get();
-    
+
     $categories = Category::where('is_active', true)->get();
-    
+
     return view('shop', compact('products', 'categories'));
 });
 
@@ -37,12 +37,12 @@ Route::post('/dashboard/login', [App\Http\Controllers\AdminController::class, 'l
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard/home', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::post('/dashboard/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
-    
+
     // Category management
     Route::resource('dashboard/categories', App\Http\Controllers\CategoryController::class, [
         'as' => 'admin'
     ]);
-    
+
     // Product management
     Route::resource('dashboard/products', App\Http\Controllers\ProductController::class, [
         'as' => 'admin'

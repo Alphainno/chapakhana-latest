@@ -163,7 +163,7 @@ class ProductSeeder extends Seeder
 
         foreach ($products as $productData) {
             $category = Category::where('name', $productData['category'])->first();
-            
+
             if ($category) {
                 Product::create([
                     'category_id' => $category->id,
