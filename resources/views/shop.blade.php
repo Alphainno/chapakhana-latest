@@ -150,7 +150,7 @@
                             data-stock="{{ $product->stock ? '1' : '0' }}"
                         >
                             <div class="relative h-44 bg-gray-100 overflow-hidden">
-                                <img src="{{ $product->image }}" alt="{{ $product->title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                                <img src="{{ asset($product->image) }}" alt="{{ $product->title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
                                 @if($product->badge)
                                 <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-gray-800 border border-gray-200">{{ $product->badge }}</span>
                                 @endif
