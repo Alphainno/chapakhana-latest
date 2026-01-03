@@ -83,7 +83,7 @@ class ProductController extends Controller
             if ($product->image && file_exists(public_path($product->image))) {
                 unlink(public_path($product->image));
             }
-            
+
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('uploads/products'), $imageName);

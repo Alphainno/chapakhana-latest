@@ -99,7 +99,7 @@
                     @error('image')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
-                    
+
                     <!-- Image Preview -->
                     <div id="imagePreviewContainer" class="mt-4 hidden">
                         <p class="text-xs font-medium text-gray-700 mb-2">Image Preview:</p>
@@ -143,7 +143,7 @@ function previewImage(event, previewId) {
     const file = event.target.files[0];
     const preview = document.getElementById(previewId);
     const container = document.getElementById(previewId + 'Container');
-    
+
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -158,7 +158,7 @@ function clearImage(inputId, previewId) {
     const input = document.getElementById(inputId);
     const preview = document.getElementById(previewId);
     const container = document.getElementById(previewId + 'Container');
-    
+
     input.value = '';
     preview.src = '';
     container.classList.add('hidden');
