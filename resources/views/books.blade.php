@@ -7,18 +7,7 @@
 @endsection
 
 @section('content')
-    <!-- Breadcrumbs -->
-    <div class="bg-white py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="text-xs text-gray-500 flex items-center gap-1">
-                <a href="/" class="hover:text-blue-600 hover:underline">Home</a>
-                <span>/</span>
-                <a href="#" class="hover:text-blue-600 hover:underline">Magazines, Books & Catalogues</a>
-                <span>/</span>
-                <span class="text-gray-800">Books</span>
-            </nav>
-        </div>
-    </div>
+
 
     <!-- Hero Section -->
     <section class="bg-white pb-12">
