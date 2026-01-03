@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Format;
 
 Route::get('/', function () {
     return view('landing');
@@ -16,8 +17,9 @@ Route::get('/shop', function () {
         ->get();
 
     $categories = Category::where('is_active', true)->get();
+    $formats = Format::where('is_active', true)->orderBy('name')->get();
 
-    return view('shop', compact('products', 'categories'));
+    return view('shop', compact('products', 'categories', 'formats'));
 });
 
 Route::get('/books', function () {
@@ -45,6 +47,11 @@ Route::middleware(['admin'])->group(function () {
 
     // Product management
     Route::resource('dashboard/products', App\Http\Controllers\ProductController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Format management
+    Route::resource('dashboard/formats', App\Http\Controllers\FormatController::class, [
         'as' => 'admin'
     ]);
 });

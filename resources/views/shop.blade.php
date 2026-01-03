@@ -87,8 +87,8 @@
                 <div class="space-y-2">
                     <p class="text-xs font-semibold text-gray-700">Format</p>
                     <div class="flex flex-wrap gap-2">
-                        @foreach (['paperback', 'hardback', 'square', 'layflat', 'magazine', 'notebook', 'pocket', 'cookbook', 'catalog', 'folder', 'poster', 'box'] as $format)
-                            <button type="button" class="format-chip rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-700 hover:border-blue-500" data-format="{{ $format }}">{{ ucfirst($format) }}</button>
+                        @foreach ($formats as $format)
+                            <button type="button" class="format-chip rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-700 hover:border-blue-500" data-format="{{ $format->slug }}">{{ $format->name }}</button>
                         @endforeach
                     </div>
                 </div>
@@ -290,18 +290,6 @@
             applyFilters();
         };
 
-        priceRange.addEventListener('input', () => { updatePriceOutput(); applyFilters(); });
-        searchInput.addEventListener('input', applyFilters);
-        categoryChecks.forEach(check => check.addEventListener('change', applyFilters));
-        ratingRadios.forEach(radio => radio.addEventListener('change', applyFilters));
-        stockToggle.addEventListener('change', applyFilters);
-        sortSelect.addEventListener('change', applyFilters);
-        clearBtn.addEventListener('click', resetFilters);
-    </script>
-</section>
-
-<!-- Product Detail Modal -->
-@include('partials.product-detail-modal')
         formatButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const value = btn.dataset.format;
@@ -315,11 +303,19 @@
             });
         });
 
+        priceRange.addEventListener('input', () => { updatePriceOutput(); applyFilters(); });
+        searchInput.addEventListener('input', applyFilters);
+        categoryChecks.forEach(check => check.addEventListener('change', applyFilters));
+        ratingRadios.forEach(radio => radio.addEventListener('change', applyFilters));
+        stockToggle.addEventListener('change', applyFilters);
+        sortSelect.addEventListener('change', applyFilters);
+        clearBtn.addEventListener('click', resetFilters);
+
         updatePriceOutput();
         applyFilters();
     });
-</script>
-@endpush
+    </script>
+</section>
 
 <!-- Product Detail Modal -->
 @include('partials.product-detail-modal')
