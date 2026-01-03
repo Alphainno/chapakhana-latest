@@ -21,6 +21,14 @@ Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegist
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
+// Admin routes
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'showLogin'])->name('admin.login');
+Route::post('/dashboard/login', [App\Http\Controllers\AdminController::class, 'login'])->name('admin.login.post');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/dashboard/home', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::post('/dashboard/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
+});
+
 // Individual book product routes
 Route::get('/books/paperback', function () {
     return view('book-configure', ['productType' => 'paperback', 'productTitle' => 'Paperback book']);
