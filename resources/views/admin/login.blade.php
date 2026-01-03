@@ -23,51 +23,51 @@
             animation: slideInRight 0.4s ease-out, fadeOut 0.3s ease-in 4.7s forwards;
             backdrop-filter: blur(10px);
         }
-        
+
         .toast-success {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .toast-error {
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .toast-icon {
             flex-shrink: 0;
             width: 24px;
             height: 24px;
         }
-        
+
         .toast-content {
             flex: 1;
         }
-        
+
         .toast-title {
             font-weight: 600;
             font-size: 15px;
             margin-bottom: 2px;
         }
-        
+
         .toast-message {
             font-size: 14px;
             opacity: 0.95;
         }
-        
+
         .toast-close {
             cursor: pointer;
             opacity: 0.8;
             transition: opacity 0.2s;
             flex-shrink: 0;
         }
-        
+
         .toast-close:hover {
             opacity: 1;
         }
-        
+
         @keyframes slideInRight {
             from {
                 transform: translateX(400px);
@@ -78,14 +78,14 @@
                 opacity: 1;
             }
         }
-        
+
         @keyframes fadeOut {
             to {
                 opacity: 0;
                 transform: translateX(400px);
             }
         }
-        
+
         @media (max-width: 640px) {
             .toast {
                 right: 10px;
@@ -99,7 +99,7 @@
 <body class="bg-gray-50">
     <!-- Toast Container -->
     <div id="toast-container"></div>
-    
+
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <!-- Logo and Header -->
@@ -212,26 +212,26 @@
         function showToast(message, type = 'success', title = '') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
+
             const isSuccess = type === 'success';
             const toastClass = isSuccess ? 'toast-success' : 'toast-error';
             const defaultTitle = isSuccess ? 'Success!' : 'Error!';
             const displayTitle = title || defaultTitle;
-            
+
             // Success icon
             const successIcon = `
                 <svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             `;
-            
+
             // Error icon
             const errorIcon = `
                 <svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             `;
-            
+
             toast.className = `toast ${toastClass}`;
             toast.innerHTML = `
                 ${isSuccess ? successIcon : errorIcon}
@@ -245,9 +245,9 @@
                     </svg>
                 </button>
             `;
-            
+
             container.appendChild(toast);
-            
+
             // Auto remove after 5 seconds
             setTimeout(() => {
                 if (toast.parentElement) {
