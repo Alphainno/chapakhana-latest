@@ -134,12 +134,12 @@
                                 <span class="text-2xl font-bold text-red-600">${{ number_format($total, 2) }}</span>
                             </div>
 
-                            <button type="submit" onclick="proceedToCheckout()" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mb-3">
+                            <a href="{{ route('checkout.index') }}" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mb-3">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"/>
                                 </svg>
                                 Proceed to Checkout
-                            </button>
+                            </a>
 
                             <form action="{{ route('cart.clear') }}" method="POST">
                                 @csrf

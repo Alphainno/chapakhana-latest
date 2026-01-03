@@ -290,3 +290,10 @@ Route::prefix('cart')->name('cart.')->middleware('auth')->group(function () {
     Route::get('/count', 'App\Http\Controllers\CartController@getCount')->name('count');
 });
 
+// Checkout Routes (requires authentication)
+Route::middleware('auth')->group(function () {
+    Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+    Route::post('/checkout/process', 'App\Http\Controllers\CheckoutController@process')->name('checkout.process');
+    Route::get('/checkout/success', 'App\Http\Controllers\CheckoutController@success')->name('checkout.success');
+});
+
