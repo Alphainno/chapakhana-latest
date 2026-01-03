@@ -79,9 +79,9 @@
                 <div class="space-y-2">
                     <div class="flex items-center justify-between text-xs font-semibold text-gray-700">
                         <span>Max price</span>
-                        <span id="priceValue" class="text-blue-600">$150</span>
+                        <span id="priceValue" class="text-blue-600">$15000</span>
                     </div>
-                    <input id="priceRange" type="range" min="5" max="150" step="1" value="120" class="w-full accent-blue-600">
+                    <input id="priceRange" type="range" min="5" max="15000" step="10" value="15000" class="w-full accent-blue-600">
                 </div>
 
                 <div class="space-y-2">
@@ -282,7 +282,7 @@
             searchInput.value = '';
             categoryChecks.forEach(c => { c.checked = false; });
             ratingRadios.forEach(r => { r.checked = r.value === '0'; });
-            priceRange.value = 120;
+            priceRange.value = 15000;
             selectedFormat = '';
             stockToggle.checked = true;
             formatButtons.forEach(btn => btn.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-700'));
@@ -314,8 +314,8 @@
         updatePriceOutput();
         applyFilters();
     });
-    </script>
-</section>
+</script>
+@endpush
 
 <!-- Product Detail Modal -->
 @include('partials.product-detail-modal')
