@@ -119,7 +119,6 @@
                 <a href="{{ route('admin.dashboard') }}" class="text-2xl font-bold text-red-600">
                     chapakhana
                 </a>
-                <span class="ml-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">ADMIN</span>
             </div>
 
             <div class="flex items-center gap-4">
