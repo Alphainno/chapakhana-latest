@@ -54,6 +54,12 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('dashboard/formats', App\Http\Controllers\FormatController::class, [
         'as' => 'admin'
     ]);
+
+    // Order management
+    Route::get('dashboard/orders', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('admin.orders.index');
+    Route::get('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('admin.orders.show');
+    Route::patch('dashboard/orders/{order}/status', [App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('admin.orders.status');
+    Route::delete('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'destroy'])->name('admin.orders.destroy');
 });
 
 // Individual book product routes

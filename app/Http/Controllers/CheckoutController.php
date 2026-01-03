@@ -80,7 +80,38 @@ class CheckoutController extends Controller
         // For now, we'll just simulate success
         $orderNumber = 'ORD-' . strtoupper(uniqid());
 
-        // Store order details in session for confirmation page
+        // Save order to database
+        $order = \App\Models\Order::create([
+            'user_id' => auth()->id(),
+            'order_number' => $orderNumber,
+            'shipping_name' => $validated['shipping_name'],
+            'shipping_email' => $validated['shipping_email'],
+            'shipping_phone' => $validated['shipping_phone'],
+            'shipping_country' => $validated['shipping_country'],
+            'shipping_address' => $validated['shipping_address'],
+            'shipping_city' => $validated['shipping_city'],
+            'shipping_state' => $validated['shipping_state'],
+            'shipping_zip' => $validated['shipping_zip'],
+            'payment_method' => $validated['payment_method'],
+            'notes' => $validated['notes'],
+            'subtotal' => $subtotal,
+            'tax' => $taxAmount,
+            'total' => $total,
+            'status' => 'pending'
+        ]);
+
+        foreach ($cart as $item) {
+            \App\Models\OrderItem::create([
+                'order_id' => $order->id,
+                'product_title' => $item['title'],
+                'product_image' => $item['image'],
+                'format' => $item['format'],
+                'quantity' => $item['quantity'],
+                'price' => $item['price']
+            ]);
+        }
+
+        // Store order details in session for confirmation page (if needed later)
         session()->put('last_order', [
             'order_number' => $orderNumber,
             'items' => $cart,
@@ -94,7 +125,7 @@ class CheckoutController extends Controller
         // Clear the cart
         session()->forget('cart');
 
-        return redirect()->route('checkout.success')->with('success', 'Order placed successfully!');
+        return redirect()->route('admin.orders.index')->with('success', 'Order placed successfully!');
     }
 
     /**
