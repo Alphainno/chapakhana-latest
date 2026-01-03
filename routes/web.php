@@ -281,7 +281,7 @@ Route::get('/stationery/sticky-notes', function () {
 });
 
 // Cart Routes
-Route::prefix('cart')->name('cart.')->group(function () {
+Route::prefix('cart')->name('cart.')->middleware('auth')->group(function () {
     Route::get('/', 'App\Http\Controllers\CartController@index')->name('index');
     Route::post('/add', 'App\Http\Controllers\CartController@add')->name('add');
     Route::delete('/remove', 'App\Http\Controllers\CartController@remove')->name('remove');

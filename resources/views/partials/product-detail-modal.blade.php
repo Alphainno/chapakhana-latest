@@ -11,9 +11,9 @@ function openProductDetail(product) {
     document.getElementById('modalProductRating').textContent = product.rating;
     document.getElementById('modalProductPrice').textContent = product.price.toFixed(2);
     document.getElementById('modalProductFormat').textContent = product.format;
-    
+
     document.getElementById('orderQuantity').value = 1;
-    
+
     document.getElementById('productDetailModal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
@@ -38,40 +38,55 @@ function decrementQty() {
 
 function addProductToCart() {
     console.log('Add to cart clicked');
-    
+
     if (!currentProduct) {
         console.error('No product selected');
         alert('Error: No product selected');
         return;
     }
-    
+
     const qty = parseInt(document.getElementById('orderQuantity').value);
-    
+
     if (!qty || qty < 1) {
         alert('Please select a valid quantity');
         return;
     }
-    
-    try {
-        // Store in localStorage
-        let cart = JSON.parse(localStorage.getItem('shopCart') || '[]');
-        const cartItem = {
-            id: currentProduct.title + Date.now(),
-            ...currentProduct,
-            quantity: qty,
-            addedAt: new Date().toISOString()
-        };
-        
-        cart.push(cartItem);
-        localStorage.setItem('shopCart', JSON.stringify(cart));
-        
-        console.log('Product added to cart:', cartItem);
-        alert(`✓ ${currentProduct.title} added to cart!\nQuantity: ${qty}\n\nTotal Items: ${cart.length}`);
-        closeProductDetail();
-    } catch (error) {
-        console.error('Error adding to cart:', error);
-        alert('Error adding to cart. Please try again.');
+
+    // Create and submit form to server
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '{{ route("cart.add") }}';
+
+    // Add CSRF token
+    const csrfInput = document.createElement('input');
+    csrfInput.type = 'hidden';
+    csrfInput.name = '_token';
+    csrfInput.value = '{{ csrf_token() }}';
+    form.appendChild(csrfInput);
+
+    // Add product data
+    const fields = {
+        title: currentProduct.title,
+        category: currentProduct.category,
+        format: currentProduct.format,
+        price: currentProduct.price,
+        rating: currentProduct.rating,
+        desc: currentProduct.desc,
+        image: currentProduct.image,
+        stock: currentProduct.stock ? '1' : '0',
+        quantity: qty
+    };
+
+    for (const [key, value] of Object.entries(fields)) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
     }
+
+    document.body.appendChild(form);
+    form.submit();
 }
 
 // Close modal on ESC key
