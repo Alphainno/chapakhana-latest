@@ -22,118 +22,73 @@
                     @csrf
 
                     <!-- Shipping Information -->
+                    @if(isset($fields['shipping']))
                     <div class="bg-white rounded-xl shadow-sm p-6">
                         <h2 class="text-xl font-bold text-gray-900 mb-4">Shipping Information</h2>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="shipping_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
-                                <input type="text" id="shipping_name" name="shipping_name" value="{{ old('shipping_name', $user->name ?? '') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_name')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
+                            @foreach($fields['shipping'] as $field)
+                            <div class="{{ $field->type == 'textarea' ? 'md:col-span-2' : '' }}">
+                                <label for="{{ $field->field_key }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    {{ $field->label }} 
+                                    @if($field->is_required)<span class="text-red-500">*</span>@endif
+                                </label>
+                                
+                                @if($field->type == 'textarea')
+                                    <textarea id="{{ $field->field_key }}" name="{{ $field->field_key }}" rows="3" {{ $field->is_required ? 'required' : '' }} class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="{{ $field->placeholder }}">{{ old($field->field_key) }}</textarea>
+                                @else
+                                    <input type="{{ $field->type }}" id="{{ $field->field_key }}" name="{{ $field->field_key }}" value="{{ old($field->field_key, ($field->field_key == 'shipping_name' ? $user->name ?? '' : ($field->field_key == 'shipping_email' ? $user->email ?? '' : ''))) }}" {{ $field->is_required ? 'required' : '' }} class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="{{ $field->placeholder }}">
+                                @endif
 
-                            <div>
-                                <label for="shipping_email" class="block text-sm font-medium text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
-                                <input type="email" id="shipping_email" name="shipping_email" value="{{ old('shipping_email', $user->email ?? '') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_email')
+                                @error($field->field_key)
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
-
-                            <div>
-                                <label for="shipping_phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number <span class="text-red-500">*</span></label>
-                                <input type="tel" id="shipping_phone" name="shipping_phone" value="{{ old('shipping_phone') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_phone')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="shipping_country" class="block text-sm font-medium text-gray-700 mb-2">Country <span class="text-red-500">*</span></label>
-                                <input type="text" id="shipping_country" name="shipping_country" value="{{ old('shipping_country') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_country')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div class="md:col-span-2">
-                                <label for="shipping_address" class="block text-sm font-medium text-gray-700 mb-2">Street Address <span class="text-red-500">*</span></label>
-                                <textarea id="shipping_address" name="shipping_address" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">{{ old('shipping_address') }}</textarea>
-                                @error('shipping_address')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="shipping_city" class="block text-sm font-medium text-gray-700 mb-2">City <span class="text-red-500">*</span></label>
-                                <input type="text" id="shipping_city" name="shipping_city" value="{{ old('shipping_city') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_city')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="shipping_state" class="block text-sm font-medium text-gray-700 mb-2">State/Province <span class="text-red-500">*</span></label>
-                                <input type="text" id="shipping_state" name="shipping_state" value="{{ old('shipping_state') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_state')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="shipping_zip" class="block text-sm font-medium text-gray-700 mb-2">ZIP/Postal Code <span class="text-red-500">*</span></label>
-                                <input type="text" id="shipping_zip" name="shipping_zip" value="{{ old('shipping_zip') }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                @error('shipping_zip')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
 
                     <!-- Payment Method -->
+                    @if(isset($fields['payment']))
+                    @foreach($fields['payment'] as $field)
                     <div class="bg-white rounded-xl shadow-sm p-6">
-                        <h2 class="text-xl font-bold text-gray-900 mb-4">Payment Method</h2>
+                        <h2 class="text-xl font-bold text-gray-900 mb-4">{{ $field->label }}</h2>
 
                         <div class="space-y-3">
+                            @if($field->options)
+                            @foreach($field->options as $option)
                             <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition">
-                                <input type="radio" name="payment_method" value="credit_card" {{ old('payment_method') == 'credit_card' ? 'checked' : '' }} class="w-4 h-4 text-blue-600 focus:ring-blue-500">
+                                <input type="radio" name="{{ $field->field_key }}" value="{{ $option['value'] }}" {{ old($field->field_key) == $option['value'] ? 'checked' : ($loop->first ? 'checked' : '') }} class="w-4 h-4 text-blue-600 focus:ring-blue-500">
                                 <div class="ml-3">
-                                    <div class="font-medium text-gray-900">Credit Card</div>
-                                    <div class="text-sm text-gray-500">Visa, Mastercard, Amex</div>
+                                    <div class="font-medium text-gray-900">{{ $option['label'] }}</div>
+                                    @if(isset($option['description']))
+                                    <div class="text-sm text-gray-500">{{ $option['description'] }}</div>
+                                    @endif
                                 </div>
                             </label>
-
-                            <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition">
-                                <input type="radio" name="payment_method" value="paypal" {{ old('payment_method') == 'paypal' ? 'checked' : '' }} class="w-4 h-4 text-blue-600 focus:ring-blue-500">
-                                <div class="ml-3">
-                                    <div class="font-medium text-gray-900">PayPal</div>
-                                    <div class="text-sm text-gray-500">Pay with your PayPal account</div>
-                                </div>
-                            </label>
-
-                            <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition">
-                                <input type="radio" name="payment_method" value="cash_on_delivery" {{ old('payment_method') == 'cash_on_delivery' ? 'checked' : 'checked' }} class="w-4 h-4 text-blue-600 focus:ring-blue-500">
-                                <div class="ml-3">
-                                    <div class="font-medium text-gray-900">Cash on Delivery</div>
-                                    <div class="text-sm text-gray-500">Pay when you receive your order</div>
-                                </div>
-                            </label>
+                            @endforeach
+                            @endif
                         </div>
-                        @error('payment_method')
+                        @error($field->field_key)
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
+                    @endforeach
+                    @endif
 
                     <!-- Order Notes -->
+                    @if(isset($fields['notes']))
+                    @foreach($fields['notes'] as $field)
                     <div class="bg-white rounded-xl shadow-sm p-6">
-                        <h2 class="text-xl font-bold text-gray-900 mb-4">Order Notes (Optional)</h2>
-                        <textarea id="notes" name="notes" rows="4" placeholder="Any special instructions for your order?" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">{{ old('notes') }}</textarea>
-                        @error('notes')
+                        <h2 class="text-xl font-bold text-gray-900 mb-4">{{ $field->label }}</h2>
+                        <textarea id="{{ $field->field_key }}" name="{{ $field->field_key }}" rows="4" placeholder="{{ $field->placeholder }}" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">{{ old($field->field_key) }}</textarea>
+                        @error($field->field_key)
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
+                    @endforeach
+                    @endif
 
                     <!-- Action Buttons -->
                     <div class="flex gap-4">

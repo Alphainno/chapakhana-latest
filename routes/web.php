@@ -60,6 +60,11 @@ Route::middleware(['admin'])->group(function () {
     Route::get('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('admin.orders.show');
     Route::patch('dashboard/orders/{order}/status', [App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('admin.orders.status');
     Route::delete('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'destroy'])->name('admin.orders.destroy');
+
+    // Checkout field management
+    Route::resource('dashboard/checkout-fields', App\Http\Controllers\Admin\CheckoutFieldController::class, [
+        'as' => 'admin'
+    ])->only(['index', 'edit', 'update']);
 });
 
 // Individual book product routes

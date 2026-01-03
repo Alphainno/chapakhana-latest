@@ -13,19 +13,19 @@
         <div class="space-y-1">
             <button type="button"
                 onclick="toggleDropdown('shop-dropdown')"
-                class="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition group {{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">
+                class="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition group {{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') || request()->routeIs('admin.checkout-fields.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <div class="flex items-center gap-3">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     <span class="font-medium">Shop</span>
                 </div>
-                <svg id="shop-dropdown-arrow" class="w-4 h-4 transition-transform duration-200 {{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg id="shop-dropdown-arrow" class="w-4 h-4 transition-transform duration-200 {{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') || request()->routeIs('admin.checkout-fields.*') ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </button>
 
-            <div id="shop-dropdown" class="{{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') ? '' : 'hidden' }} pl-12 space-y-1 mt-1">
+            <div id="shop-dropdown" class="{{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') || request()->routeIs('admin.orders.*') || request()->routeIs('admin.checkout-fields.*') ? '' : 'hidden' }} pl-12 space-y-1 mt-1">
                 <a href="{{ route('admin.categories.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.categories.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Categories
                 </a>
@@ -35,8 +35,11 @@
                 <a href="{{ route('admin.formats.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.formats.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Formats
                 </a>
-                <a href="{{ route('admin.orders.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.orders.index') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
+                <a href="{{ route('admin.orders.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.orders.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Orders
+                </a>
+                <a href="{{ route('admin.checkout-fields.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.checkout-fields.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
+                    Checkout Fields
                 </a>
             </div>
         </div>

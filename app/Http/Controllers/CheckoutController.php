@@ -28,13 +28,20 @@ class CheckoutController extends Controller
         $taxAmount = $subtotal * $tax;
         $total = $subtotal + $taxAmount;
 
+        // Fetch dynamic checkout fields
+        $fields = \App\Models\CheckoutField::where('is_visible', true)
+            ->orderBy('sort_order')
+            ->get()
+            ->groupBy('section');
+
         return view('checkout', [
             'cart' => $cart,
             'subtotal' => $subtotal,
             'tax' => $taxAmount,
             'total' => $total,
             'itemCount' => count($cart),
-            'user' => auth()->user()
+            'user' => auth()->user(),
+            'fields' => $fields
         ]);
     }
 
@@ -43,18 +50,34 @@ class CheckoutController extends Controller
      */
     public function process(Request $request)
     {
-        $validated = $request->validate([
-            'shipping_name' => 'required|string|max:255',
-            'shipping_email' => 'required|email|max:255',
-            'shipping_phone' => 'required|string|max:20',
-            'shipping_address' => 'required|string|max:500',
-            'shipping_city' => 'required|string|max:100',
-            'shipping_state' => 'required|string|max:100',
-            'shipping_zip' => 'required|string|max:20',
-            'shipping_country' => 'required|string|max:100',
-            'payment_method' => 'required|in:credit_card,paypal,cash_on_delivery',
-            'notes' => 'nullable|string|max:1000',
-        ]);
+        // Build dynamic validation
+        $fields = \App\Models\CheckoutField::where('is_visible', true)->get();
+        $rules = [];
+        
+        foreach ($fields as $field) {
+            $fieldRules = [];
+            
+            if ($field->is_required) {
+                $fieldRules[] = 'required';
+            } else {
+                $fieldRules[] = 'nullable';
+            }
+
+            if ($field->type == 'email') {
+                $fieldRules[] = 'email';
+            }
+
+            if ($field->field_key == 'payment_method') {
+                $fieldRules[] = 'in:credit_card,paypal,cash_on_delivery';
+            } else {
+                $fieldRules[] = 'string';
+                $fieldRules[] = 'max:500';
+            }
+            
+            $rules[$field->field_key] = implode('|', $fieldRules);
+        }
+
+        $validated = $request->validate($rules);
 
         $cart = session()->get('cart', []);
 
@@ -84,16 +107,16 @@ class CheckoutController extends Controller
         $order = \App\Models\Order::create([
             'user_id' => auth()->id(),
             'order_number' => $orderNumber,
-            'shipping_name' => $validated['shipping_name'],
-            'shipping_email' => $validated['shipping_email'],
-            'shipping_phone' => $validated['shipping_phone'],
-            'shipping_country' => $validated['shipping_country'],
-            'shipping_address' => $validated['shipping_address'],
-            'shipping_city' => $validated['shipping_city'],
-            'shipping_state' => $validated['shipping_state'],
-            'shipping_zip' => $validated['shipping_zip'],
-            'payment_method' => $validated['payment_method'],
-            'notes' => $validated['notes'],
+            'shipping_name' => $validated['shipping_name'] ?? auth()->user()->name,
+            'shipping_email' => $validated['shipping_email'] ?? auth()->user()->email,
+            'shipping_phone' => $validated['shipping_phone'] ?? null,
+            'shipping_country' => $validated['shipping_country'] ?? null,
+            'shipping_address' => $validated['shipping_address'] ?? null,
+            'shipping_city' => $validated['shipping_city'] ?? null,
+            'shipping_state' => $validated['shipping_state'] ?? null,
+            'shipping_zip' => $validated['shipping_zip'] ?? null,
+            'payment_method' => $validated['payment_method'] ?? 'cash_on_delivery',
+            'notes' => $validated['notes'] ?? null,
             'subtotal' => $subtotal,
             'tax' => $taxAmount,
             'total' => $total,
