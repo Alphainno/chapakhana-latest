@@ -65,6 +65,12 @@
 
             <div id="services-dropdown" class="hidden pl-12 space-y-1 mt-1">
                 <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
+                    Categories
+                </a>
+                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
+                    Products
+                </a>
+                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
                     Books
                 </a>
                 <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
