@@ -32,9 +32,17 @@ class ProductController extends Controller
             'popularity' => 'nullable|integer|min:0|max:100',
             'stock' => 'boolean',
             'badge' => 'nullable|string|max:255',
-            'image' => 'required|url',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'is_active' => 'boolean'
         ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/products'), $imageName);
+            $validated['image'] = '/uploads/products/' . $imageName;
+        }
 
         $validated['stock'] = $request->has('stock');
         $validated['is_active'] = $request->has('is_active');
@@ -65,9 +73,22 @@ class ProductController extends Controller
             'popularity' => 'nullable|integer|min:0|max:100',
             'stock' => 'boolean',
             'badge' => 'nullable|string|max:255',
-            'image' => 'required|url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'is_active' => 'boolean'
         ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($product->image && file_exists(public_path($product->image))) {
+                unlink(public_path($product->image));
+            }
+            
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/products'), $imageName);
+            $validated['image'] = '/uploads/products/' . $imageName;
+        }
 
         $validated['stock'] = $request->has('stock');
         $validated['is_active'] = $request->has('is_active');

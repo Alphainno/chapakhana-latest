@@ -14,7 +14,7 @@
     </div>
 
     <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
-        <form action="{{ route('admin.products.update', $product) }}" method="POST" class="space-y-8">
+        <form action="{{ route('admin.products.update', $product) }}" method="POST" enctype="multipart/form-data" class="space-y-8">
             @csrf
             @method('PUT')
 
@@ -92,17 +92,34 @@
                 </div>
 
                 <div class="col-span-2">
-                    <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Image URL <span class="text-red-500">*</span></label>
-                    <input type="url" name="image" id="image" value="{{ old('image', $product->image) }}" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="https://images.unsplash.com/..." required>
+                    <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Product Image</label>
+                    <div class="mt-1">
+                        <input type="file" name="image" id="image" accept="image/*" class="block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" onchange="previewImage(event, 'imagePreview')">
+                        <p class="mt-2 text-xs text-gray-500">Leave empty to keep current image. Accepted formats: JPG, PNG, GIF, WEBP (Max: 2MB)</p>
+                    </div>
                     @error('image')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
+                    
                     @if($product->image)
-                    <div class="mt-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                        <p class="text-xs font-medium text-gray-700 mb-2">Current Image:</p>
-                        <img src="{{ $product->image }}" alt="Current image" class="w-40 h-40 object-cover rounded-lg shadow-sm">
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <p class="text-xs font-medium text-gray-700 mb-3">Current Image:</p>
+                        <img src="{{ asset($product->image) }}" alt="Current product image" class="w-48 h-48 object-cover rounded-lg shadow-md border-2 border-gray-200">
                     </div>
                     @endif
+                    
+                    <!-- New Image Preview -->
+                    <div id="imagePreviewContainer" class="mt-4 hidden">
+                        <p class="text-xs font-medium text-gray-700 mb-2">New Image Preview:</p>
+                        <div class="relative inline-block">
+                            <img id="imagePreview" src="" alt="Preview" class="w-48 h-48 object-cover rounded-lg shadow-md border-2 border-gray-200">
+                            <button type="button" onclick="clearImage('image', 'imagePreview')" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -127,3 +144,32 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function previewImage(event, previewId) {
+    const file = event.target.files[0];
+    const preview = document.getElementById(previewId);
+    const container = document.getElementById(previewId + 'Container');
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            container.classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
+    }
+}
+
+function clearImage(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    const container = document.getElementById(previewId + 'Container');
+    
+    input.value = '';
+    preview.src = '';
+    container.classList.add('hidden');
+}
+</script>
+@endpush
