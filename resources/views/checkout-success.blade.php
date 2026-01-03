@@ -18,7 +18,7 @@
             </div>
             <h1 class="text-3xl font-bold text-gray-900 mb-2">Order Placed Successfully!</h1>
             <p class="text-gray-600 mb-6">Thank you for your order. We'll send you a confirmation email shortly.</p>
-            
+
             <div class="bg-blue-50 rounded-lg p-4 mb-6">
                 <p class="text-sm text-gray-600">Order Number</p>
                 <p class="text-2xl font-bold text-blue-600">{{ $order['order_number'] }}</p>
@@ -30,7 +30,7 @@
         <!-- Order Details -->
         <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 class="text-xl font-bold text-gray-900 mb-6">Order Details</h2>
-            
+
             <div class="space-y-4 mb-6">
                 @foreach($order['items'] as $item)
                 <div class="flex gap-4 pb-4 border-b border-gray-200">

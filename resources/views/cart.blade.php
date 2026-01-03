@@ -38,7 +38,7 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">
                             {{ count($cart) }} {{ count($cart) == 1 ? 'item' : 'items' }} in your cart
                         </h2>
-                        
+
                         <div class="space-y-4">
                             @foreach ($cart as $productKey => $item)
                                 <article class="flex gap-6 border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
@@ -160,10 +160,10 @@
                     <svg class="w-24 h-24 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"/>
                     </svg>
-                    
+
                     <h2 class="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
                     <p class="text-gray-600 mb-6">Start shopping to add items to your cart</p>
-                    
+
                     <a href="/shop" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>

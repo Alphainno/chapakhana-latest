@@ -24,7 +24,7 @@
                     <!-- Shipping Information -->
                     <div class="bg-white rounded-xl shadow-sm p-6">
                         <h2 class="text-xl font-bold text-gray-900 mb-4">Shipping Information</h2>
-                        
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="shipping_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
@@ -95,7 +95,7 @@
                     <!-- Payment Method -->
                     <div class="bg-white rounded-xl shadow-sm p-6">
                         <h2 class="text-xl font-bold text-gray-900 mb-4">Payment Method</h2>
-                        
+
                         <div class="space-y-3">
                             <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition">
                                 <input type="radio" name="payment_method" value="credit_card" {{ old('payment_method') == 'credit_card' ? 'checked' : '' }} class="w-4 h-4 text-blue-600 focus:ring-blue-500">
@@ -151,7 +151,7 @@
             <div class="lg:col-span-1">
                 <div class="bg-white rounded-xl shadow-sm p-6 sticky top-4">
                     <h2 class="text-xl font-bold text-gray-900 mb-4">Order Summary</h2>
-                    
+
                     <div class="space-y-4 mb-6">
                         @foreach($cart as $item)
                         <div class="flex gap-3">

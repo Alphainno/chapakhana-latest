@@ -12,22 +12,22 @@ class CheckoutController extends Controller
     public function index(Request $request)
     {
         $cart = session()->get('cart', []);
-        
+
         // Redirect back to cart if cart is empty
         if (empty($cart)) {
             return redirect()->route('cart.index')->with('error', 'Your cart is empty!');
         }
-        
+
         // Calculate totals
         $subtotal = 0;
         foreach ($cart as $item) {
             $subtotal += $item['price'] * $item['quantity'];
         }
-        
+
         $tax = 0.08; // 8% tax rate
         $taxAmount = $subtotal * $tax;
         $total = $subtotal + $taxAmount;
-        
+
         return view('checkout', [
             'cart' => $cart,
             'subtotal' => $subtotal,
@@ -57,7 +57,7 @@ class CheckoutController extends Controller
         ]);
 
         $cart = session()->get('cart', []);
-        
+
         if (empty($cart)) {
             return redirect()->route('cart.index')->with('error', 'Your cart is empty!');
         }
@@ -67,7 +67,7 @@ class CheckoutController extends Controller
         foreach ($cart as $item) {
             $subtotal += $item['price'] * $item['quantity'];
         }
-        
+
         $taxAmount = $subtotal * 0.08;
         $total = $subtotal + $taxAmount;
 
@@ -76,10 +76,10 @@ class CheckoutController extends Controller
         // 2. Process payment
         // 3. Send confirmation email
         // 4. Clear the cart
-        
+
         // For now, we'll just simulate success
         $orderNumber = 'ORD-' . strtoupper(uniqid());
-        
+
         // Store order details in session for confirmation page
         session()->put('last_order', [
             'order_number' => $orderNumber,
@@ -90,10 +90,10 @@ class CheckoutController extends Controller
             'total' => $total,
             'date' => now()
         ]);
-        
+
         // Clear the cart
         session()->forget('cart');
-        
+
         return redirect()->route('checkout.success')->with('success', 'Order placed successfully!');
     }
 
@@ -103,11 +103,11 @@ class CheckoutController extends Controller
     public function success(Request $request)
     {
         $order = session()->get('last_order');
-        
+
         if (!$order) {
             return redirect()->route('shop')->with('error', 'No order found!');
         }
-        
+
         return view('checkout-success', ['order' => $order]);
     }
 }
