@@ -1,13 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use App\Models\Category;
 
 Route::get('/', function () {
     return view('landing');
 });
 
 Route::get('/shop', function () {
-    return view('shop');
+    $products = Product::with('category')
+        ->where('is_active', true)
+        ->where('stock', true)
+        ->latest()
+        ->get();
+    
+    $categories = Category::where('is_active', true)->get();
+    
+    return view('shop', compact('products', 'categories'));
 });
 
 Route::get('/books', function () {
@@ -27,6 +37,16 @@ Route::post('/dashboard/login', [App\Http\Controllers\AdminController::class, 'l
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard/home', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::post('/dashboard/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
+    
+    // Category management
+    Route::resource('dashboard/categories', App\Http\Controllers\CategoryController::class, [
+        'as' => 'admin'
+    ]);
+    
+    // Product management
+    Route::resource('dashboard/products', App\Http\Controllers\ProductController::class, [
+        'as' => 'admin'
+    ]);
 });
 
 // Individual book product routes

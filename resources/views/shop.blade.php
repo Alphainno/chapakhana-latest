@@ -6,23 +6,6 @@
     @include('partials.header')
 @endsection
 
-@php
-    $products = [
-        ['title' => 'Paperback Book Bundle', 'category' => 'books', 'format' => 'paperback', 'price' => 8.50, 'rating' => 4.6, 'popularity' => 95, 'stock' => true, 'badge' => 'New', 'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=420&fit=crop', 'desc' => 'Lightweight novel-ready sets with recycled interiors.'],
-        ['title' => 'Hardback Photo Book', 'category' => 'books', 'format' => 'hardback', 'price' => 24.00, 'rating' => 4.8, 'popularity' => 91, 'stock' => true, 'badge' => 'Bestseller', 'image' => 'https://images.unsplash.com/photo-1457694587812-e8bf29a43845?w=500&h=420&fit=crop', 'desc' => 'Gallery-grade binding with matte cover options.'],
-        ['title' => 'Square Lookbook', 'category' => 'marketing', 'format' => 'square', 'price' => 16.75, 'rating' => 4.4, 'popularity' => 82, 'stock' => true, 'badge' => 'Limited', 'image' => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=420&fit=crop', 'desc' => 'Brand-forward square books for campaigns.'],
-        ['title' => 'Layflat Portfolio', 'category' => 'books', 'format' => 'layflat', 'price' => 38.00, 'rating' => 4.9, 'popularity' => 77, 'stock' => true, 'badge' => 'Premium', 'image' => 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=500&h=420&fit=crop', 'desc' => 'Seamless spreads ideal for photography and art.'],
-        ['title' => 'Magazine Run', 'category' => 'marketing', 'format' => 'magazine', 'price' => 4.20, 'rating' => 4.2, 'popularity' => 88, 'stock' => true, 'badge' => 'Bulk', 'image' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=420&fit=crop', 'desc' => 'Quick-turn glossy mags for launches.'],
-        ['title' => 'Notebook Stack', 'category' => 'stationery', 'format' => 'notebook', 'price' => 6.40, 'rating' => 4.1, 'popularity' => 73, 'stock' => true, 'badge' => 'Eco', 'image' => 'https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=500&h=420&fit=crop', 'desc' => 'Wire-bound notes with soy inks.'],
-        ['title' => 'Pocket Zine', 'category' => 'books', 'format' => 'pocket', 'price' => 3.80, 'rating' => 4.0, 'popularity' => 69, 'stock' => true, 'badge' => 'Indie', 'image' => 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=500&h=420&fit=crop', 'desc' => 'Short-run zines with uncoated feel.'],
-        ['title' => 'Cookbook Kit', 'category' => 'books', 'format' => 'cookbook', 'price' => 19.50, 'rating' => 4.5, 'popularity' => 83, 'stock' => true, 'badge' => 'Bundle', 'image' => 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&h=420&fit=crop', 'desc' => 'Oil-resistant papers with foil accents.'],
-        ['title' => 'Catalog Set', 'category' => 'marketing', 'format' => 'catalog', 'price' => 7.10, 'rating' => 4.3, 'popularity' => 79, 'stock' => true, 'badge' => 'Ready', 'image' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=420&fit=crop', 'desc' => 'Multi-variant catalogs with spot UV.'],
-        ['title' => 'Presentation Folder', 'category' => 'stationery', 'format' => 'folder', 'price' => 2.90, 'rating' => 3.9, 'popularity' => 60, 'stock' => true, 'badge' => 'Saver', 'image' => 'https://images.unsplash.com/photo-1509099836639-18ba02e2e1ba?w=500&h=420&fit=crop', 'desc' => 'Die-cut folders with custom pockets.'],
-        ['title' => 'Large Format Poster', 'category' => 'signage', 'format' => 'poster', 'price' => 12.00, 'rating' => 4.7, 'popularity' => 86, 'stock' => true, 'badge' => 'UV Safe', 'image' => 'https://images.unsplash.com/photo-1522199710521-72d69614c702?w=500&h=420&fit=crop', 'desc' => 'Vibrant latex inks for outdoor durability.'],
-        ['title' => 'Product Packaging Set', 'category' => 'packaging', 'format' => 'box', 'price' => 29.00, 'rating' => 4.4, 'popularity' => 80, 'stock' => true, 'badge' => 'Custom', 'image' => 'https://images.unsplash.com/photo-1453689472869-23f81f0b89dd?w=500&h=420&fit=crop', 'desc' => 'Rigid boxes with embossing and liners.'],
-    ];
-@endphp
-
 @section('content')
     <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-14">
@@ -83,14 +66,11 @@
 
                 <div class="space-y-3">
                     <p class="text-xs font-semibold text-gray-700">Categories</p>
-                    @php
-                        $categories = ['books' => 'Books', 'marketing' => 'Marketing', 'stationery' => 'Stationery', 'signage' => 'Signage', 'packaging' => 'Packaging'];
-                    @endphp
                     <div class="space-y-2">
-                        @foreach ($categories as $key => $label)
+                        @foreach ($categories as $category)
                             <label class="flex items-center gap-2 text-sm text-gray-700">
-                                <input type="checkbox" value="{{ $key }}" class="category-filter rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                                <span>{{ $label }}</span>
+                                <input type="checkbox" value="{{ $category->slug }}" class="category-filter rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                <span>{{ $category->name }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -150,56 +130,58 @@
                         <article
                             class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                             onclick="openProductDetail({
-                                title: '{{ $product['title'] }}',
-                                category: '{{ $product['category'] }}',
-                                format: '{{ ucfirst($product['format']) }}',
-                                price: {{ $product['price'] }},
-                                rating: {{ $product['rating'] }},
-                                desc: '{{ $product['desc'] }}',
-                                image: '{{ $product['image'] }}',
-                                stock: {{ $product['stock'] ? 'true' : 'false' }}
+                                title: '{{ $product->title }}',
+                                category: '{{ $product->category->slug }}',
+                                format: '{{ $product->format }}',
+                                price: {{ $product->price }},
+                                rating: {{ $product->rating }},
+                                desc: '{{ addslashes($product->description) }}',
+                                image: '{{ $product->image }}',
+                                stock: {{ $product->stock ? 'true' : 'false' }}
                             })"
                             data-product-card
-                            data-title="{{ strtolower($product['title']) }}"
-                            data-category="{{ $product['category'] }}"
-                            data-format="{{ $product['format'] }}"
-                            data-price="{{ $product['price'] }}"
-                            data-rating="{{ $product['rating'] }}"
-                            data-popularity="{{ $product['popularity'] }}"
-                            data-tags="{{ strtolower($product['desc']) }}"
-                            data-stock="{{ $product['stock'] ? '1' : '0' }}"
+                            data-title="{{ strtolower($product->title) }}"
+                            data-category="{{ $product->category->slug }}"
+                            data-format="{{ strtolower($product->format) }}"
+                            data-price="{{ $product->price }}"
+                            data-rating="{{ $product->rating }}"
+                            data-popularity="{{ $product->popularity }}"
+                            data-tags="{{ strtolower($product->description) }}"
+                            data-stock="{{ $product->stock ? '1' : '0' }}"
                         >
                             <div class="relative h-44 bg-gray-100 overflow-hidden">
-                                <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-                                <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-gray-800 border border-gray-200">{{ $product['badge'] }}</span>
+                                <img src="{{ $product->image }}" alt="{{ $product->title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                                @if($product->badge)
+                                <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-gray-800 border border-gray-200">{{ $product->badge }}</span>
+                                @endif
                             </div>
                             <div class="p-4 space-y-2">
                                 <div class="flex items-center justify-between">
-                                    <div class="text-xs uppercase tracking-wide text-blue-600 font-semibold">{{ ucfirst($product['category']) }}</div>
+                                    <div class="text-xs uppercase tracking-wide text-blue-600 font-semibold">{{ $product->category->name }}</div>
                                     <div class="flex items-center gap-1 text-xs text-yellow-500">
-                                        <span class="font-semibold">{{ number_format($product['rating'], 1) }}</span>
+                                        <span class="font-semibold">{{ number_format($product->rating, 1) }}</span>
                                         <span>★</span>
                                     </div>
                                 </div>
-                                <h3 class="text-base font-bold text-gray-900 leading-snug">{{ $product['title'] }}</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">{{ $product['desc'] }}</p>
+                                <h3 class="text-base font-bold text-gray-900 leading-snug">{{ $product->title }}</h3>
+                                <p class="text-xs text-gray-600 leading-relaxed">{{ $product->description }}</p>
                                 <div class="flex items-center justify-between pt-2">
-                                    <div class="text-lg font-bold text-gray-900">${{ number_format($product['price'], 2) }}</div>
+                                    <div class="text-lg font-bold text-gray-900">${{ number_format($product->price, 2) }}</div>
                                     <div class="flex items-center gap-2 text-xs text-gray-600">
-                                        <span class="rounded-full bg-gray-100 px-2 py-1">{{ ucfirst($product['format']) }}</span>
+                                        <span class="rounded-full bg-gray-100 px-2 py-1">{{ $product->format }}</span>
                                         <span class="rounded-full bg-green-50 text-green-700 px-2 py-1">In stock</span>
                                     </div>
                                 </div>
                                 <form action="{{ route('cart.add') }}" method="POST" class="w-full mt-3">
                                     @csrf
-                                    <input type="hidden" name="title" value="{{ $product['title'] }}">
-                                    <input type="hidden" name="category" value="{{ $product['category'] }}">
-                                    <input type="hidden" name="format" value="{{ ucfirst($product['format']) }}">
-                                    <input type="hidden" name="price" value="{{ $product['price'] }}">
-                                    <input type="hidden" name="rating" value="{{ $product['rating'] }}">
-                                    <input type="hidden" name="desc" value="{{ $product['desc'] }}">
-                                    <input type="hidden" name="image" value="{{ $product['image'] }}">
-                                    <input type="hidden" name="stock" value="{{ $product['stock'] ? '1' : '0' }}">
+                                    <input type="hidden" name="title" value="{{ $product->title }}">
+                                    <input type="hidden" name="category" value="{{ $product->category->slug }}">
+                                    <input type="hidden" name="format" value="{{ $product->format }}">
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+                                    <input type="hidden" name="rating" value="{{ $product->rating }}">
+                                    <input type="hidden" name="desc" value="{{ $product->description }}">
+                                    <input type="hidden" name="image" value="{{ $product->image }}">
+                                    <input type="hidden" name="stock" value="{{ $product->stock ? '1' : '0' }}">
                                     <input type="hidden" name="quantity" value="1">
                                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
