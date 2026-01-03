@@ -24,7 +24,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </button>
-            
+
             <div id="shop-dropdown" class="{{ request()->routeIs('admin.categories.*') || request()->routeIs('admin.products.*') || request()->routeIs('admin.formats.*') ? '' : 'hidden' }} pl-12 space-y-1 mt-1">
                 <a href="{{ route('admin.categories.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.categories.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
                     Categories
