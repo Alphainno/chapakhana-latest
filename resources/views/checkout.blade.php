@@ -114,7 +114,7 @@
                             <div class="flex-1">
                                 <h3 class="text-sm font-medium text-gray-900">{{ $item['title'] }}</h3>
                                 <p class="text-xs text-gray-500">{{ $item['format'] }}</p>
-                                <p class="text-sm text-gray-700">Qty: {{ $item['quantity'] }} × ${{ number_format($item['price'], 2) }}</p>
+                                <p class="text-sm text-gray-700">Qty: {{ $item['quantity'] }} × ৳{{ number_format($item['price'], 2) }}</p>
                             </div>
                         </div>
                         @endforeach

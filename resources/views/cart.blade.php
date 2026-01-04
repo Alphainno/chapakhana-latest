@@ -54,7 +54,7 @@
                                                 <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
                                                 <p class="text-sm text-gray-600">{{ $item['desc'] }}</p>
                                             </div>
-                                            <p class="text-xl font-bold text-gray-900">${{ number_format($item['price'], 2) }}</p>
+                                            <p class="text-xl font-bold text-gray-900">৳{{ number_format($item['price'], 2) }}</p>
                                         </div>
 
                                         <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
@@ -89,7 +89,7 @@
                                         </div>
 
                                         <div class="text-right text-sm text-gray-600 mt-2">
-                                            Subtotal: <span class="font-semibold text-gray-900">${{ number_format($item['price'] * $item['quantity'], 2) }}</span>
+                                            Subtotal: <span class="font-semibold text-gray-900">৳{{ number_format($item['price'] * $item['quantity'], 2) }}</span>
                                         </div>
                                     </div>
                                 </article>
@@ -125,13 +125,13 @@
 
                                 <div class="flex justify-between text-sm text-gray-600">
                                     <span>Tax (8%)</span>
-                                    <span class="font-semibold text-gray-900">${{ number_format($tax, 2) }}</span>
+                                    <span class="font-semibold text-gray-900">৳{{ number_format($tax, 2) }}</span>
                                 </div>
                             </div>
 
                             <div class="flex justify-between mb-6">
                                 <span class="text-lg font-bold text-gray-900">Total</span>
-                                <span class="text-2xl font-bold text-red-600">${{ number_format($total, 2) }}</span>
+                                <span class="text-2xl font-bold text-red-600">৳{{ number_format($total, 2) }}</span>
                             </div>
 
                             <a href="{{ route('checkout.index') }}" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mb-3">

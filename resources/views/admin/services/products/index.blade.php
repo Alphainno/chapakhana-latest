@@ -53,10 +53,10 @@
                         <div class="font-medium text-gray-900">{{ $product->name }}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="text-sm text-gray-500">{{ $product->serviceCategory->name }}</span>
+                        <span class="text-sm text-gray-500">{{ $product->category?->name ?? 'N/A' }}</span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="text-sm text-gray-900">रू {{ number_format($product->price, 2) }}</span>
+                        <span class="text-sm text-gray-900">৳ {{ number_format($product->price, 2) }}</span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $product->is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">

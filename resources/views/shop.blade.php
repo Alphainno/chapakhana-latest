@@ -168,7 +168,7 @@
                                 <h3 class="text-base font-bold text-gray-900 leading-snug">{{ $product->title }}</h3>
                                 <p class="text-xs text-gray-600 leading-relaxed">{{ $product->description }}</p>
                                 <div class="flex items-center justify-between pt-2">
-                                    <div class="text-lg font-bold text-gray-900">${{ number_format($product->price, 2) }}</div>
+                                    <div class="text-lg font-bold text-gray-900">৳{{ number_format($product->price, 2) }}</div>
                                     <div class="flex items-center gap-2 text-xs text-gray-600">
                                         <span class="rounded-full bg-gray-100 px-2 py-1">{{ $product->format }}</span>
                                         <span class="rounded-full bg-green-50 text-green-700 px-2 py-1">In stock</span>
@@ -219,7 +219,7 @@
         let selectedFormat = '';
 
         const updatePriceOutput = () => {
-            priceValue.textContent = `$${priceRange.value}`;
+            priceValue.textContent = `৳${priceRange.value}`;
         };
 
         const sortCards = () => {

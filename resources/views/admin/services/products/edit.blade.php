@@ -50,7 +50,7 @@
             </div>
 
             <div>
-                <label for="price" class="block text-sm font-semibold text-gray-800 mb-2">Price (रू) <span class="text-red-500">*</span></label>
+                <label for="price" class="block text-sm font-semibold text-gray-800 mb-2">Price (৳) <span class="text-red-500">*</span></label>
                 <input type="number" name="price" id="price" value="{{ old('price', $serviceProduct->price) }}" step="0.01" min="0" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="0.00" required>
                 @error('price')
                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>

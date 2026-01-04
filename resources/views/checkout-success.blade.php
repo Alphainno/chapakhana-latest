@@ -38,10 +38,10 @@
                     <div class="flex-1">
                         <h3 class="font-medium text-gray-900">{{ $item['title'] }}</h3>
                         <p class="text-sm text-gray-500">{{ $item['format'] }}</p>
-                        <p class="text-sm text-gray-700 mt-1">Quantity: {{ $item['quantity'] }} × ${{ number_format($item['price'], 2) }}</p>
+                        <p class="text-sm text-gray-700 mt-1">Quantity: {{ $item['quantity'] }} × ৳{{ number_format($item['price'], 2) }}</p>
                     </div>
                     <div class="text-right">
-                        <p class="font-bold text-gray-900">${{ number_format($item['price'] * $item['quantity'], 2) }}</p>
+                        <p class="font-bold text-gray-900">৳{{ number_format($item['price'] * $item['quantity'], 2) }}</p>
                     </div>
                 </div>
                 @endforeach
@@ -50,7 +50,7 @@
             <div class="border-t border-gray-200 pt-4 space-y-2">
                 <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Subtotal</span>
-                    <span class="text-gray-900">${{ number_format($order['subtotal'], 2) }}</span>
+                    <span class="text-gray-900">৳{{ number_format($order['subtotal'], 2) }}</span>
                 </div>
                 <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Shipping</span>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Tax</span>
-                    <span class="text-gray-900">${{ number_format($order['tax'], 2) }}</span>
+                    <span class="text-gray-900">৳{{ number_format($order['tax'], 2) }}</span>
                 </div>
                 <div class="flex justify-between text-lg font-bold border-t border-gray-200 pt-2">
                     <span class="text-gray-900">Total</span>

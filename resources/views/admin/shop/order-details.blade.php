@@ -48,10 +48,10 @@
                                 {{ $item->quantity }}
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-700">
-                                ${{ number_format($item->price, 2) }}
+                                ৳{{ number_format($item->price, 2) }}
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-900 font-semibold text-right">
-                                ${{ number_format($item->price * $item->quantity, 2) }}
+                                ৳{{ number_format($item->price * $item->quantity, 2) }}
                             </td>
                         </tr>
                         @endforeach
@@ -61,15 +61,15 @@
                     <div class="flex flex-col items-end space-y-2">
                         <div class="flex justify-between w-full max-w-xs">
                             <span class="text-gray-600">Subtotal</span>
-                            <span class="font-medium text-gray-900">${{ number_format($order->subtotal, 2) }}</span>
+                            <span class="font-medium text-gray-900">৳{{ number_format($order->subtotal, 2) }}</span>
                         </div>
                         <div class="flex justify-between w-full max-w-xs">
                             <span class="text-gray-600">Tax</span>
-                            <span class="font-medium text-gray-900">${{ number_format($order->tax, 2) }}</span>
+                            <span class="font-medium text-gray-900">৳{{ number_format($order->tax, 2) }}</span>
                         </div>
                         <div class="flex justify-between w-full max-w-xs border-t border-gray-300 pt-2">
                             <span class="text-lg font-bold text-gray-900">Total</span>
-                            <span class="text-lg font-bold text-blue-600">${{ number_format($order->total, 2) }}</span>
+                            <span class="text-lg font-bold text-blue-600">৳{{ number_format($order->total, 2) }}</span>
                         </div>
                     </div>
                 </div>
