@@ -9,9 +9,19 @@ use Illuminate\Http\Request;
 
 class ServiceProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = ServiceProduct::with('category')->latest()->paginate(15);
+        $query = ServiceProduct::with('category')->latest();
+
+        // Filter by category if slug is provided
+        if ($request->has('category')) {
+            $category = ServiceCategory::where('slug', $request->category)->first();
+            if ($category) {
+                $query->where('service_category_id', $category->id);
+            }
+        }
+
+        $products = $query->paginate(15);
         return view('admin.services.products.index', compact('products'));
     }
 

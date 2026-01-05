@@ -17,12 +17,6 @@
         </a>
     </div>
 
-    @if(session('success'))
-        <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="bg-white rounded-lg shadow overflow-hidden">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
@@ -40,7 +34,11 @@
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap">
                         @if($product->image)
-                            <img src="{{ asset('uploads/service-products/' . $product->image) }}" alt="{{ $product->name }}" class="w-12 h-12 object-cover rounded">
+                            @if(str_starts_with($product->image, 'http://') || str_starts_with($product->image, 'https://'))
+                                <img src="{{ $product->image }}" alt="{{ $product->name }}" class="w-12 h-12 object-cover rounded">
+                            @else
+                                <img src="{{ asset('uploads/service-products/' . $product->image) }}" alt="{{ $product->name }}" class="w-12 h-12 object-cover rounded">
+                            @endif
                         @else
                             <div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">
                                 <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,10 +63,10 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a href="{{ route('admin.service-products.edit', $product) }}" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
-                        <form action="{{ route('admin.service-products.destroy', $product) }}" method="POST" class="inline">
+                        <form action="{{ route('admin.service-products.destroy', $product) }}" method="POST" class="inline delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Are you sure?')">Delete</button>
+                            <button type="button" onclick="showDeleteModal(this.closest('form'), 'Are you sure you want to delete this service product?')" class="text-red-600 hover:text-red-900">Delete</button>
                         </form>
                     </td>
                 </tr>

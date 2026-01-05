@@ -24,15 +24,38 @@ class ServiceCategory extends Model
 
         static::creating(function ($category) {
             if (empty($category->slug)) {
-                $category->slug = Str::slug($category->name);
+                $category->slug = self::generateUniqueSlug($category->name);
             }
         });
 
         static::updating(function ($category) {
             if ($category->isDirty('name') && !$category->isDirty('slug')) {
-                $category->slug = Str::slug($category->name);
+                $category->slug = self::generateUniqueSlug($category->name, $category->id);
             }
         });
+    }
+
+    private static function generateUniqueSlug($name, $excludeId = null)
+    {
+        $slug = Str::slug($name);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        $query = self::where('slug', $slug);
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        while ($query->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+            $query = self::where('slug', $slug);
+            if ($excludeId) {
+                $query->where('id', '!=', $excludeId);
+            }
+        }
+
+        return $slug;
     }
 
     public function products()

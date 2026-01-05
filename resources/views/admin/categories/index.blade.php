@@ -43,10 +43,10 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                         <a href="{{ route('admin.categories.edit', $category) }}" class="text-blue-600 hover:text-blue-900">Edit</a>
-                        <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="inline">
+                        <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="inline delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Are you sure?')" class="text-red-600 hover:text-red-900">Delete</button>
+                            <button type="button" onclick="showDeleteModal(this.closest('form'), 'Are you sure you want to delete this category? All associated products will be affected.')" class="text-red-600 hover:text-red-900">Delete</button>
                         </form>
                     </td>
                 </tr>

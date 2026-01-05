@@ -23,11 +23,17 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true
         ]);
 
-        // Seed categories and products
+        // Seed shop categories and products
         $this->call([
             CategorySeeder::class,
             FormatSeeder::class,
             ProductSeeder::class,
+        ]);
+
+        // Seed service categories and products
+        $this->call([
+            ServiceCategorySeeder::class,
+            AllServiceProductsSeeder::class,
         ]);
     }
 }

@@ -59,13 +59,17 @@
 
             <div>
                 <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Product Image</label>
-                @if($serviceProduct->image)
-                    <div class="mb-3">
-                        <img src="{{ asset('uploads/service-products/' . $serviceProduct->image) }}" alt="{{ $serviceProduct->name }}" class="w-32 h-32 object-cover rounded-lg border-2 border-gray-200">
-                        <p class="text-sm text-gray-500 mt-1">Current image</p>
-                    </div>
-                @endif
-                <input type="file" name="image" id="image" accept="image/*" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                <div id="imagePreview" class="{{ $serviceProduct->image ? '' : 'hidden' }} mb-3">
+                    @php
+                        $imageUrl = $serviceProduct->image;
+                        if ($imageUrl && !filter_var($imageUrl, FILTER_VALIDATE_URL)) {
+                            $imageUrl = asset('uploads/service-products/' . $imageUrl);
+                        }
+                    @endphp
+                    <img id="previewImg" src="{{ $imageUrl }}" alt="{{ $serviceProduct->name }}" class="w-32 h-32 object-cover rounded-lg border-2 border-gray-200">
+                    <p class="text-sm text-gray-500 mt-1">{{ $serviceProduct->image ? 'Current image' : 'Image preview' }}</p>
+                </div>
+                <input type="file" name="image" id="image" accept="image/*" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" onchange="previewImage(event)">
                 <p class="mt-1 text-xs text-gray-500">Leave empty to keep current image</p>
                 @error('image')
                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -87,4 +91,18 @@
         </form>
     </div>
 </div>
+
+<script>
+function previewImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImg').src = e.target.result;
+            document.getElementById('imagePreview').classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 @endsection

@@ -9,12 +9,6 @@
         <p class="text-gray-500">Manage the hero section of the shop page.</p>
     </div>
 
-    @if(session('success'))
-        <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="bg-white rounded-xl shadow-sm p-6 max-w-4xl">
         <form action="{{ route('admin.shop-hero.update') }}" method="POST" class="space-y-8">
             @csrf

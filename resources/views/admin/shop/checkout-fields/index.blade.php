@@ -8,12 +8,6 @@
         <h1 class="text-2xl font-bold text-gray-800">Checkout Form Fields</h1>
     </div>
 
-    @if(session('success'))
-        <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="bg-white rounded-xl shadow-sm overflow-hidden">
         <table class="w-full text-left">
             <thead class="bg-gray-50 border-b border-gray-200">

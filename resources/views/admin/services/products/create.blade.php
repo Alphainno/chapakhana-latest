@@ -58,7 +58,11 @@
 
             <div>
                 <label for="image" class="block text-sm font-semibold text-gray-800 mb-2">Product Image</label>
-                <input type="file" name="image" id="image" accept="image/*" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                <div id="imagePreview" class="mb-3 hidden">
+                    <img id="previewImg" src="" alt="Preview" class="w-32 h-32 object-cover rounded-lg border-2 border-gray-200">
+                    <p class="text-sm text-gray-500 mt-1">Image preview</p>
+                </div>
+                <input type="file" name="image" id="image" accept="image/*" class="mt-1 block w-full px-4 py-3 border-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" onchange="previewImage(event)">
                 @error('image')
                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -79,4 +83,20 @@
         </form>
     </div>
 </div>
+
+<script>
+function previewImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImg').src = e.target.result;
+            document.getElementById('imagePreview').classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
+    } else {
+        document.getElementById('imagePreview').classList.add('hidden');
+    }
+}
+</script>
 @endsection

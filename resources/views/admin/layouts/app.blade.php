@@ -155,6 +155,9 @@
         </main>
     </div>
 
+    <!-- Delete Confirmation Modal -->
+    @include('components.delete-modal')
+
     <script>
         // Toast Notification Function
         function showToast(message, type = 'success', title = '') {
@@ -203,11 +206,17 @@
 
         // Show toast on page load if there's a session message
         @if (session('success'))
-            showToast('{{ session('success') }}', 'success', 'Welcome Admin!');
+            showToast('{{ session('success') }}', 'success');
         @endif
 
         @if (session('error'))
-            showToast('{{ session('error') }}', 'error', 'Access Denied');
+            showToast('{{ session('error') }}', 'error');
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                showToast('{{ $error }}', 'error', 'Validation Error');
+            @endforeach
         @endif
     </script>
 

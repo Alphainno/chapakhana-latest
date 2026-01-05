@@ -65,38 +65,25 @@
 
             <div id="services-dropdown" class="{{ request()->routeIs('admin.service-categories.*') || request()->routeIs('admin.service-products.*') ? '' : 'hidden' }} pl-12 space-y-1 mt-1">
                 <a href="{{ route('admin.service-categories.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.service-categories.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
-                    Categories
+                    All Categories
                 </a>
                 <a href="{{ route('admin.service-products.index') }}" class="block py-2 text-sm transition-colors {{ request()->routeIs('admin.service-products.*') ? 'text-blue-600 font-bold' : 'text-gray-600 hover:text-blue-600' }}">
-                    Products
+                    All Products
                 </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Books
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Booklets
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Business Cards
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Stickers
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Banners
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Catalogs
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Magazines
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Stationery
-                </a>
-                <a href="#" class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600">
-                    Postcards
-                </a>
+
+                @if(isset($serviceCategories) && $serviceCategories->count() > 0)
+                    <div class="border-t border-gray-200 my-2 pt-2">
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Categories</p>
+                        @foreach($serviceCategories as $category)
+                            <a href="{{ route('admin.service-products.index', ['category' => $category->slug]) }}"
+                               class="block py-2 text-sm transition-colors text-gray-600 hover:text-blue-600 pl-2"
+                               title="{{ $category->description }}">
+                                {{ $category->name }}
+                                <span class="text-xs text-gray-400">({{ $category->products_count }})</span>
+                            </a>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     </nav>

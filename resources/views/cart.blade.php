@@ -25,12 +25,6 @@
                 </div>
             @endif
 
-            @if (session('success'))
-                <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p class="text-green-800">{{ session('success') }}</p>
-                </div>
-            @endif
-
             @if (count($cart) > 0)
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Cart Items -->
