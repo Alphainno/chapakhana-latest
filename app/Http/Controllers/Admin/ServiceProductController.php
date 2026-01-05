@@ -38,9 +38,17 @@ class ServiceProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'nullable|numeric|min:0',
-            'image' => 'nullable|url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
             'is_active' => 'boolean'
         ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/service-products'), $imageName);
+            $validated['image'] = $imageName;
+        }
 
         $validated['is_active'] = $request->has('is_active');
 
@@ -63,9 +71,25 @@ class ServiceProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'nullable|numeric|min:0',
-            'image' => 'nullable|url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
             'is_active' => 'boolean'
         ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if it's a file (not a URL)
+            if ($serviceProduct->image && !filter_var($serviceProduct->image, FILTER_VALIDATE_URL)) {
+                $oldImagePath = public_path('uploads/service-products/' . $serviceProduct->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/service-products'), $imageName);
+            $validated['image'] = $imageName;
+        }
 
         $validated['is_active'] = $request->has('is_active');
 
