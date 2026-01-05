@@ -21,40 +21,40 @@
             overflow-x: hidden;
         }
 
-        body { 
+        body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         /* Slider animations */
-        .slider-item { 
-            display: none; 
-            animation: fadeIn 0.5s ease-in; 
+        .slider-item {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
         }
-        .slider-item.active { 
-            display: block; 
+        .slider-item.active {
+            display: block;
         }
 
         /* Text justification */
-        .content-justify p { 
-            text-align: justify; 
-            text-justify: inter-word; 
+        .content-justify p {
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         /* Keyframe animations */
-        @keyframes fadeIn { 
-            from { opacity: 0; } 
-            to { opacity: 1; } 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Scrollbar hiding */
-        .scrollbar-hide::-webkit-scrollbar { 
-            display: none; 
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
         }
-        .scrollbar-hide { 
-            -ms-overflow-style: none; 
-            scrollbar-width: none; 
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         /* Smooth transitions */
@@ -67,7 +67,7 @@
             body {
                 font-size: 14px;
             }
-            
+
             input, button {
                 min-height: 44px;
                 min-width: 44px;
@@ -190,7 +190,7 @@
         @yield('content')
     </main>
     @yield('footer')
-    
+
     <script>
         // Toast Notification Function
         function showToast(message, type = 'success', title = '') {

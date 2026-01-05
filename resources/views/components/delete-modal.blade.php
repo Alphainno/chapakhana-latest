@@ -39,11 +39,11 @@
     #deleteModal.show {
         display: flex !important;
     }
-    
+
     #deleteModal.show #deleteModalContent {
         animation: modalFadeIn 0.3s ease-out forwards;
     }
-    
+
     @keyframes modalFadeIn {
         from {
             opacity: 0;
@@ -54,7 +54,7 @@
             transform: scale(1) translateY(0);
         }
     }
-    
+
     @keyframes modalFadeOut {
         from {
             opacity: 1;
@@ -75,16 +75,16 @@
         const modal = document.getElementById('deleteModal');
         const modalContent = document.getElementById('deleteModalContent');
         const messageElement = document.getElementById('deleteModalMessage');
-        
+
         if (message) {
             messageElement.textContent = message;
         } else {
             messageElement.textContent = 'Are you sure you want to delete this item? All data associated with it will be permanently removed from the system.';
         }
-        
+
         modal.classList.remove('hidden');
         modal.classList.add('show');
-        
+
         // Prevent body scroll
         document.body.style.overflow = 'hidden';
     }
@@ -92,9 +92,9 @@
     function closeDeleteModal() {
         const modal = document.getElementById('deleteModal');
         const modalContent = document.getElementById('deleteModalContent');
-        
+
         modalContent.style.animation = 'modalFadeOut 0.3s ease-out forwards';
-        
+
         setTimeout(() => {
             modal.classList.remove('show');
             modal.classList.add('hidden');
