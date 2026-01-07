@@ -9,7 +9,8 @@
 @section('content')
     <!-- Hero Slider Section -->
     <section class="relative bg-white py-3">
-        <div class="max-w-7xl mx-auto relative h-[400px] md:h-[460px] overflow-hidden px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl rounded-[24px] mx-auto relative h-[400px] md:h-[460px] overflow-hidden">
+            <div class="h-full px-4 sm:px-6 lg:px-8">
             <!-- Slider Container -->
             <div id="heroSlider" class="relative h-full">
                 <!-- Slide 1 -->
@@ -17,7 +18,7 @@
                     <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1920&h=600&fit=crop" alt="Hero Background 1" class="absolute inset-0 w-full h-full object-cover">
                     <div class="relative h-full flex flex-col md:flex-row md:items-center">
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 mt-4 md:mt-0">
-                            <div class="bg-white inline-block px-5 py-3 rounded-md shadow-lg mb-8">
+                            <div class="bg-white inline-block px-5 py-3 rounded-2xl shadow-lg mb-8">
                                 <div class="flex items-start gap-3">
                                     <div class="text-left">
                                         <div class="text-4xl font-bold text-gray-900 leading-none">93<span class="text-2xl align-top">%</span></div>
@@ -41,8 +42,8 @@
                         </div>
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 md:absolute md:right-8 lg:right-24 md:top-1/2 md:-translate-y-1/2 text-left md:text-right mt-6 md:mt-0">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight">
-                                Every page tells your story.
-                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">We print it with care, So your brand speaks louder.</span>
+                                আপনার গল্প, আমাদের ছাপা
+                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">মানসম্মত প্রিন্টিং সেবা, সাশ্রয়ী মূল্যে</span>
                             </h1>
                         </div>
                     </div>
@@ -53,7 +54,7 @@
                     <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1920&h=600&fit=crop" alt="Hero Background 2" class="absolute inset-0 w-full h-full object-cover">
                     <div class="relative h-full flex flex-col md:flex-row md:items-center">
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 mt-4 md:mt-0">
-                            <div class="bg-white inline-block px-5 py-3 rounded-md shadow-lg mb-8">
+                            <div class="bg-white inline-block px-5 py-3 rounded-2xl shadow-lg mb-8">
                                 <div class="flex items-start gap-3">
                                     <div class="text-left">
                                         <div class="text-4xl font-bold text-gray-900 leading-none">93<span class="text-2xl align-top">%</span></div>
@@ -77,11 +78,11 @@
                         </div>
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 md:absolute md:right-8 lg:right-24 md:top-1/2 md:-translate-y-1/2 text-left md:text-right mt-6 md:mt-0">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-4 md:mb-6">
-                                Not just printers. True partners.
-                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">Real people by your side, Every step of the way.</span>
+                                শুধু প্রিন্টার নয়, আপনার বিশ্বস্ত সঙ্গী
+                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">প্রতিটি পদক্ষেপে আমরা আছি আপনার পাশে</span>
                             </h1>
-                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg shadow-lg transition-all transform hover:scale-105">
-                                TALK TO US
+                            <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg shadow-lg transition-all transform hover:scale-105">
+                                যোগাযোগ করুন
                             </button>
                         </div>
                     </div>
@@ -92,7 +93,7 @@
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1920&h=600&fit=crop" alt="Hero Background 3" class="absolute inset-0 w-full h-full object-cover">
                     <div class="relative h-full flex flex-col md:flex-row md:items-center">
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 mt-4 md:mt-0">
-                            <div class="bg-white inline-block px-5 py-3 rounded-md shadow-lg mb-8">
+                            <div class="bg-white inline-block px-5 py-3 rounded-2xl shadow-lg mb-8">
                                 <div class="flex items-start gap-3">
                                     <div class="text-left">
                                         <div class="text-4xl font-bold text-gray-900 leading-none">93<span class="text-2xl align-top">%</span></div>
@@ -116,8 +117,8 @@
                         </div>
                         <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-16 md:absolute md:right-8 lg:right-24 md:top-1/2 md:-translate-y-1/2 text-left md:text-right mt-6 md:mt-0">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight">
-                                Transform Your Ideas
-                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">Into Beautiful Prints That Stand Out.</span>
+                                আপনার আইডিয়াকে বাস্তবে রূপান্তরিত করুন
+                                <span class="block text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-2 font-bold">দেশসেরা মানের প্রিন্টিং এ</span>
                             </h1>
                         </div>
                     </div>
@@ -144,11 +145,24 @@
                 <button onclick="goToSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition"></button>
                 <button onclick="goToSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-white/60 hover:bg-white transition"></button>
             </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Headline & Short Description in Bangla Section -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                আপনার স্বপ্নকে বাস্তবে রূপান্তরিত করুন
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                চাপাখানা হলো আপনার বিশ্বস্ত প্রিন্টিং সঙ্গী। উচ্চমানের প্রিন্টিং সেবা, দ্রুত ডেলিভারি এবং প্রতিযোগিতামূলক মূল্যে আমরা আপনার ব্যবসায়িক লক্ষ্য অর্জনে সহায়তা করি। বই, ম্যাগাজিন, ব্যানার থেকে শুরু করে সকল ধরনের মার্কেটিং ম্যাটেরিয়াল - সবকিছুই পাবেন এক জায়গায়।
+            </p>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-12 sm:py-14 lg:py-16 bg-white">
+    {{-- <section class="py-12 sm:py-14 lg:py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
                 <div class="flex flex-col items-center text-center">
@@ -157,7 +171,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Committed to quality</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">মান নিশ্চিতকরণ</h3>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
@@ -165,7 +179,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Value for money</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">সাশ্রয়ী মূল্য</h3>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
@@ -173,7 +187,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Speed & Reliability</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">দ্রুত ডেলিভারি</h3>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
@@ -181,7 +195,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Happy clients first</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">গ্রাহক সন্তুষ্টি</h3>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
@@ -189,7 +203,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Professional adviser</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">পেশাদার পরামর্শ</h3>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mb-3 sm:mb-4 flex items-center justify-center">
@@ -197,7 +211,109 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">Tons of products</h3>
+                    <h3 class="font-semibold text-gray-900 text-sm sm:text-base">বিশাল সংগ্রহ</h3>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <!-- How to Order Banner Section -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Side - Order Instructions -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        <span class="text-green-600">০ টাকা</span> বিনিয়োগে শুরু করুন
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Step 1 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center">
+                                    <span class="text-lg font-bold text-white">১</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">পণ্য নির্বাচন করুন</h3>
+                                <p class="text-gray-600 text-base leading-relaxed">
+                                    ১০০০+ উচ্চমানের পণ্য থেকে আপনার পছন্দের পণ্য বেছে নিন
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center">
+                                    <span class="text-lg font-bold text-white">২</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">ডিজাইন যুক্ত করুন</h3>
+                                <p class="text-gray-600 text-base leading-relaxed">
+                                    সহজ এবং মজাদার উপায়ে আপনার পণ্যের ডিজাইন করুন!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center">
+                                    <span class="text-lg font-bold text-white">৩</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">বিক্রয় শুরু করুন</h3>
+                                <p class="text-gray-600 text-base leading-relaxed">
+                                    আপনি লাভের মার্জিন নির্ধারণ করুন, উৎপাদন ও ডেলিভারি আমরা করবো
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="/shop" class="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base">
+                            ডিজাইন শুরু করুন
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="#learn-more" class="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 font-bold py-3 px-8 rounded-lg border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 text-base">
+                            আরও জানুন
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Video Frame -->
+                <div class="relative flex items-center justify-start lg:justify-center lg:pl-8">
+                    <!-- Video Container -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 w-full max-w-md aspect-square">
+                        <!-- Video Player -->
+                        <video 
+                            class="w-full h-full object-cover" 
+                            controls 
+                            poster="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=1200&fit=crop">
+                            <source src="/videos/how-it-works.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Play Button Overlay (visible before video starts) -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 cursor-pointer group" onclick="this.previousElementSibling.play(); this.style.display='none';">
+                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-10 h-10 text-green-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-100 rounded-full -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-32 h-32 bg-green-100 rounded-full -z-10"></div>
                 </div>
             </div>
         </div>
@@ -206,9 +322,19 @@
     <!-- Best Sellers Section -->
     <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">Best Sellers</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">জনপ্রিয় পণ্য</h2>
             <div class="relative">
                 <div class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab scroll-smooth select-none touch-pan-y" id="bestSellersContainer">
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop" alt="Magazines" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Magazines</h3>
+                            </div>
+                        </a>
+                    </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
                         <a href="/books" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
@@ -216,6 +342,26 @@
                             </div>
                             <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-gray-900">Books</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <a href="/catalogs" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Catalog</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex-none w-64 sm:w-72 snap-center">
+                        <a href="/brochures" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=400&fit=crop" alt="Marketing Material" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold text-gray-900">Marketing Material</h3>
                             </div>
                         </a>
                     </div>
@@ -230,52 +376,12 @@
                         </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/stickers" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=400&fit=crop" alt="Stickers" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Stickers</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
                         <a href="/postcards-invitations" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=400&fit=crop" alt="Postcards and Invitations" class="w-full h-full object-contain">
+                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=400&fit=crop" alt="Invitation & Stationery" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Postcards and Invitations</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/booklets" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=400&fit=crop" alt="Booklets" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Booklets</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/catalogs" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Catalogs" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Catalogs</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/magazines" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop" alt="Magazines" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Magazines</h3>
+                                <h3 class="text-lg font-semibold text-gray-900">Invitation & Stationery</h3>
                             </div>
                         </a>
                     </div>
@@ -290,22 +396,12 @@
                         </a>
                     </div>
                     <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/stationery" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/promotional-items" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&h=400&fit=crop" alt="Stationery" class="w-full h-full object-contain">
+                                <img src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=400&fit=crop" alt="Promotional Items" class="w-full h-full object-contain">
                             </div>
                             <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Stationery</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-none w-64 sm:w-72 snap-center">
-                        <a href="/banners" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <div class="aspect-square bg-gray-100 flex items-center justify-center p-8">
-                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=400&fit=crop" alt="Signage" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-4 text-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Signage</h3>
+                                <h3 class="text-lg font-semibold text-gray-900">Promotional Items</h3>
                             </div>
                         </a>
                     </div>
@@ -324,8 +420,113 @@
         </div>
     </section>
 
-    <!-- Magazines, Books, and Catalogs Section -->
+    <!-- Testimonials Section -->
     <section class="py-12 sm:py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">গ্রাহকদের মতামত</h2>
+                <p class="text-lg text-gray-600">সারা বাংলাদেশ জুড়ে হাজারো ব্যবসায়ীর বিশ্বস্ত সঙ্গী</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"অসাধারণ প্রিন্ট কোয়ালিটি এবং দ্রুত ডেলিভারি! আমাদের সব মার্কেটিং ম্যাটেরিয়ালের জন্য চাপাখানা এখন প্রথম পছন্দ। অবশ্যই সুপারিশ করব!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold text-lg">আ</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">আহমেদ রহমান</p>
+                            <p class="text-sm text-gray-500">সিইও, টেক সলিউশন্স লিমিটেড</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"চমৎকার সেবা এবং সাশ্রয়ী মূল্য। আমাদের কোম্পানির ক্যাটালগ তারা অসাধারণভাবে প্রিন্ট করেছে এবং সময়মতো ডেলিভারি দিয়েছে। আবারও ব্যবহার করবো!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-700 font-bold text-lg">সা</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">সাদিয়া করিম</p>
+                            <p class="text-sm text-gray-500">মার্কেটিং ম্যানেজার, ফ্যাশন হাব</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"পেশাদার টিম এবং দারুণ কাস্টমার সাপোর্ট। আমাদের বিয়ের কার্ড ডিজাইন ও প্রিন্ট করতে তারা সাহায্য করেছে। ধন্যবাদ চাপাখানা!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold text-lg">র</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">রফিক হোসেন</p>
+                            <p class="text-sm text-gray-500">ব্যবসায়ী</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Trust Us Section -->
+
+
+    <!-- Offer Banner Section -->
+  
+
+    <!-- Magazines, Books, and Catalogs Section -->
+    {{-- <section class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="order-2 lg:order-1">
@@ -626,46 +827,46 @@
                 </button>
             </div>
         </div>
+    </section> --}}
+
+   <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-green-600 to-green-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">বিশেষ অফার!</h2>
+                <p class="text-xl sm:text-2xl mb-6">প্রথম অর্ডারে পাচ্ছেন ২০% ছাড়</p>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">নতুন গ্রাহকরা সকল প্রিন্টিং সার্ভিসে বিশেষ ছাড় উপভোগ করতে পারবেন। সীমিত সময়ের অফার!</p>
+                <a href="/shop" class="inline-block bg-white text-green-700 hover:bg-orange-50 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+                    এখনই অফার নিন
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50 content-justify">
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
-                Online Printing Services: Professional and Affordable Solutions for Your Business
-            </h1>
-            <div class="space-y-6 mb-12">
-                <p class="text-base text-gray-700 leading-relaxed">
-                    Welcome to <strong>Pixartprinting</strong>, wich provides exceptional <strong>online printing services</strong> for businesses of all sizes. With over 30 years in the industry, we have built a solid reputation for offering high-quality, affordable, and custom <strong>printing services</strong>. Serving over a million customers, our team of more than 1,200 employees processes more than 15,000 orders every day. We are proud to have received over 60,000 online reviews, showcasing our commitment to delivering the best customer experience possible.
-                </p>
-                <p class="text-base text-gray-700 leading-relaxed">
-                    At Pixartprinting, we understand that your printing needs go beyond just <strong>high-quality products</strong>. We offer professional advice, custom solutions, and expert file checks to ensure that your prints are exactly what you need. Our quick and easy payment options make it simple to order, and our dedicated <strong>customer support team</strong> is always available to assist with any questions or concerns. Whether you're looking for one-off prints or bulk orders, we make sure every project meets the highest standards.
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">যারা আমাদের বিশ্বাস করেন</h2>
+                <p class="text-lg text-gray-600">শত শত প্রতিষ্ঠান তাদের প্রিন্টিং এর জন্য আমাদের উপর আস্থা রাখেন</p>
             </div>
-            <div class="mb-12">
-                <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4">
-                    Book and Magazine Printing: Bring Your Ideas to Life with Professional Printing Services
-                </h2>
-                <div class="space-y-4">
-                    <p class="text-base text-gray-700 leading-relaxed">
-                        Pixartprinting offers a wide range of <a href="/books" class="text-blue-600 hover:underline font-medium">book and magazine printing</a> options, perfect for both personal projects and professional needs. Whether you're looking to print a <a href="/catalogs" class="text-blue-600 hover:underline font-medium">catalog</a>, <a href="/booklets" class="text-blue-600 hover:underline font-medium">booklet</a>, or a full-length <a href="/magazines" class="text-blue-600 hover:underline font-medium">magazine</a>, we provide the highest quality <strong>printing services</strong>. We specialize in <a href="/books" class="text-blue-600 hover:underline font-medium">saddle stitch</a> and <a href="/books" class="text-blue-600 hover:underline font-medium">perfect binding</a> to create professional-looking, durable publications that will stand the test of time.
-                    </p>
-                    <p class="text-base text-gray-700 leading-relaxed">
-                        Our <strong>online printing services for books and magazines</strong> are designed to be easy and efficient. With our custom printing services, you can upload your files, choose the perfect paper, and select your binding options—all from the comfort of your home or office. Whether you need a small run or large-scale printing, Pixartprinting delivers fast turnaround times without compromising on quality.
-                    </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 1</div>
                 </div>
-            </div>
-            <div class="mb-12">
-                <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4">
-                    Label and Sticker Printing: Custom Solutions for Your Branding Needs
-                </h2>
-                <div class="space-y-4">
-                    <p class="text-base text-gray-700 leading-relaxed">
-                        Enhance your brand visibility with our <a href="/stickers" class="text-blue-600 hover:underline font-medium">custom sticker</a> and <a href="/stickers" class="text-blue-600 hover:underline font-medium">label printing services</a>. Pixartprinting offers a variety of sticker and label types that are perfect for product packaging, marketing campaigns, and promotional materials. Our <strong>custom stickers</strong> are made from durable materials, ensuring long-lasting quality for both indoor and outdoor use.
-                    </p>
-                    <p class="text-base text-gray-700 leading-relaxed">
-                        Whether you need custom stickers for a product launch or <a href="/stickers" class="text-blue-600 hover:underline font-medium">roll labels</a> for your packaging, we offer fully <strong>personalized printing services</strong> to help you stand out. Choose from different shapes, sizes, and finishes to create the perfect stickers or labels for your business needs.
-                    </p>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 2</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 3</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 4</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 5</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-2xl font-bold text-gray-400">Brand 6</div>
                 </div>
             </div>
         </div>

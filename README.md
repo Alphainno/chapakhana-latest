@@ -57,3 +57,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+Home Page Layout Structure: 
+
+Hero Banner Slide 
+Headline & Short Description in bangla 
+Write How to order here show with animation 
+Headline & Category Slide 
+Testimonial
+Who trust us 
+Offer Banner 
+Footer 
