@@ -25,12 +25,6 @@
                 </div>
             @endif
 
-            @if (session('success'))
-                <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p class="text-green-800">{{ session('success') }}</p>
-                </div>
-            @endif
-
             @if (count($cart) > 0)
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Cart Items -->
@@ -38,7 +32,7 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">
                             {{ count($cart) }} {{ count($cart) == 1 ? 'item' : 'items' }} in your cart
                         </h2>
-                        
+
                         <div class="space-y-4">
                             @foreach ($cart as $productKey => $item)
                                 <article class="flex gap-6 border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
@@ -54,7 +48,7 @@
                                                 <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
                                                 <p class="text-sm text-gray-600">{{ $item['desc'] }}</p>
                                             </div>
-                                            <p class="text-xl font-bold text-gray-900">${{ number_format($item['price'], 2) }}</p>
+                                            <p class="text-xl font-bold text-gray-900">৳{{ number_format($item['price'], 2) }}</p>
                                         </div>
 
                                         <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
@@ -89,7 +83,7 @@
                                         </div>
 
                                         <div class="text-right text-sm text-gray-600 mt-2">
-                                            Subtotal: <span class="font-semibold text-gray-900">${{ number_format($item['price'] * $item['quantity'], 2) }}</span>
+                                            Subtotal: <span class="font-semibold text-gray-900">৳{{ number_format($item['price'] * $item['quantity'], 2) }}</span>
                                         </div>
                                     </div>
                                 </article>
@@ -125,21 +119,21 @@
 
                                 <div class="flex justify-between text-sm text-gray-600">
                                     <span>Tax (8%)</span>
-                                    <span class="font-semibold text-gray-900">${{ number_format($tax, 2) }}</span>
+                                    <span class="font-semibold text-gray-900">৳{{ number_format($tax, 2) }}</span>
                                 </div>
                             </div>
 
                             <div class="flex justify-between mb-6">
                                 <span class="text-lg font-bold text-gray-900">Total</span>
-                                <span class="text-2xl font-bold text-red-600">${{ number_format($total, 2) }}</span>
+                                <span class="text-2xl font-bold text-red-600">৳{{ number_format($total, 2) }}</span>
                             </div>
 
-                            <button type="submit" onclick="proceedToCheckout()" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mb-3">
+                            <a href="{{ route('checkout.index') }}" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mb-3">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"/>
                                 </svg>
                                 Proceed to Checkout
-                            </button>
+                            </a>
 
                             <form action="{{ route('cart.clear') }}" method="POST">
                                 @csrf
@@ -160,10 +154,10 @@
                     <svg class="w-24 h-24 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8m10 0l2-8m-10 8h12m0 0h2m-2 0v2m0-2v-2"/>
                     </svg>
-                    
+
                     <h2 class="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
                     <p class="text-gray-600 mb-6">Start shopping to add items to your cart</p>
-                    
+
                     <a href="/shop" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>

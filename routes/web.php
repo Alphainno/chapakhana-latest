@@ -1,13 +1,43 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Format;
 
 Route::get('/', function () {
     return view('landing');
 });
 
 Route::get('/shop', function () {
-    return view('shop');
+    $products = Product::with('category')
+        ->where('is_active', true)
+        ->where('stock', true)
+        ->latest()
+        ->get();
+
+    $categories = Category::where('is_active', true)->get();
+    $formats = Format::where('is_active', true)->orderBy('name')->get();
+    $hero = \App\Models\ShopHeroSection::first() ?? \App\Models\ShopHeroSection::create([
+        'subtitle' => 'Curated print catalogue',
+        'title' => 'Shop every format in one place.',
+        'description' => 'Browse books, marketing kits, signage, and packaging with ready-to-order specs. Filter fast, compare formats, and ship anywhere.',
+        'badges' => ['Lead times 48h', 'Color-managed', 'Proofing included'],
+        'stat1_label' => 'Average rating',
+        'stat1_value' => '4.6',
+        'stat1_sublabel' => 'Feefo verified',
+        'stat2_label' => 'Formats',
+        'stat2_value' => '30+',
+        'stat2_sublabel' => 'Books to boxes',
+        'stat3_label' => 'Turnaround',
+        'stat3_value' => '48h',
+        'stat3_sublabel' => 'Express available',
+        'stat4_label' => 'Support',
+        'stat4_value' => '24/7',
+        'stat4_sublabel' => 'Print specialists',
+    ]);
+
+    return view('shop', compact('products', 'categories', 'formats', 'hero'));
 });
 
 Route::get('/books', function () {
@@ -54,6 +84,54 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+// Admin routes
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'showLogin'])->name('admin.login');
+Route::post('/dashboard/login', [App\Http\Controllers\AdminController::class, 'login'])->name('admin.login.post');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/dashboard/home', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::post('/dashboard/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
+
+    // Category management
+    Route::resource('dashboard/categories', App\Http\Controllers\CategoryController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Product management
+    Route::resource('dashboard/products', App\Http\Controllers\ProductController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Format management
+    Route::resource('dashboard/formats', App\Http\Controllers\FormatController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Order management
+    Route::get('dashboard/orders', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('admin.orders.index');
+    Route::get('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('admin.orders.show');
+    Route::patch('dashboard/orders/{order}/status', [App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('admin.orders.status');
+    Route::delete('dashboard/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'destroy'])->name('admin.orders.destroy');
+
+    // Checkout field management
+    Route::resource('dashboard/checkout-fields', App\Http\Controllers\Admin\CheckoutFieldController::class, [
+        'as' => 'admin'
+    ])->only(['index', 'edit', 'update']);
+
+    // Shop hero section management
+    Route::get('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'edit'])->name('admin.shop-hero.edit');
+    Route::put('dashboard/shop-hero', [App\Http\Controllers\Admin\ShopHeroController::class, 'update'])->name('admin.shop-hero.update');
+
+    // Service Category management
+    Route::resource('dashboard/service-categories', App\Http\Controllers\Admin\ServiceCategoryController::class, [
+        'as' => 'admin'
+    ]);
+
+    // Service Product management
+    Route::resource('dashboard/service-products', App\Http\Controllers\Admin\ServiceProductController::class, [
+        'as' => 'admin'
+    ]);
+});
 
 // Individual book product routes
 Route::get('/books/paperback', function () {
@@ -664,12 +742,19 @@ Route::prefix('promotional-items')->group(function () {
 });
 
 // Cart Routes
-Route::prefix('cart')->name('cart.')->group(function () {
+Route::prefix('cart')->name('cart.')->middleware('auth')->group(function () {
     Route::get('/', 'App\Http\Controllers\CartController@index')->name('index');
     Route::post('/add', 'App\Http\Controllers\CartController@add')->name('add');
     Route::delete('/remove', 'App\Http\Controllers\CartController@remove')->name('remove');
     Route::post('/update', 'App\Http\Controllers\CartController@update')->name('update');
     Route::post('/clear', 'App\Http\Controllers\CartController@clear')->name('clear');
     Route::get('/count', 'App\Http\Controllers\CartController@getCount')->name('count');
+});
+
+// Checkout Routes (requires authentication)
+Route::middleware('auth')->group(function () {
+    Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+    Route::post('/checkout/process', 'App\Http\Controllers\CheckoutController@process')->name('checkout.process');
+    Route::get('/checkout/success', 'App\Http\Controllers\CheckoutController@success')->name('checkout.success');
 });
 

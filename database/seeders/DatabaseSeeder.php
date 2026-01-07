@@ -16,6 +16,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Seed admin user
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@chapakhana.com',
+            'password' => bcrypt('admin123'),
+            'is_admin' => true
+        ]);
+
+        // Seed shop categories and products
+        $this->call([
+            CategorySeeder::class,
+            FormatSeeder::class,
+            ProductSeeder::class,
+        ]);
+
+        // Seed service categories and products
+        $this->call([
+            ServiceCategorySeeder::class,
+            AllServiceProductsSeeder::class,
+        ]);
+        
+        // Seed admin seeder
         $this->call(AdminSeeder::class);
     }
 }
